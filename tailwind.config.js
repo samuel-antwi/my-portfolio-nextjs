@@ -13,13 +13,16 @@ module.exports = {
       backgroundColor: (theme) => ({
         ...theme('colors'),
         primary: '#252a35',
+        primary_1: '#e31c6d',
         secondary: '#11ccc9',
         nav: '#1b252f',
+        portfolio: '#f5f5f5',
       }),
       borderColor: (theme) => ({
         ...theme('colors'),
         DEFAULT: theme('colors.gray.300', 'currentColor'),
         primary: '#252a35',
+        primary_1: '#e31c6d',
         secondary: '#11ccc9',
       }),
       screens: {
