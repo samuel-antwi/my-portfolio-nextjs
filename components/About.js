@@ -2,15 +2,36 @@ import { ImAlarm, ImRocket } from 'react-icons/im';
 import { GiAerodynamicHarpoon } from 'react-icons/gi';
 import { FaLaptop, FaMobile, FaRegLightbulb } from 'react-icons/fa';
 import Image from 'next/image';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
 
 const About = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
   return (
     <div className='min-h-screen text-gray-700'>
       <div className='py-20'>
         <h1 className='text-center uppercase md:text-3xl font-semibold tracking-widest mb-3'>
           About
         </h1>
-        <div className='h-1 bg-gray-900 w-10 flex max-w-xs mx-auto'></div>
+        <motion.div
+          ref={ref}
+          animate={controls}
+          initial='hidden'
+          transition={{ duration: 0.8 }}
+          variants={{
+            visible: { opacity: 1, scale: 1 },
+            hidden: { opacity: 0, scale: 0 },
+          }}
+          className='h-1 bg-gray-900 w-10 flex max-w-xs mx-auto'></motion.div>
         <section className='sm:grid md:grid-cols-4 sm:grid-cols-2 max-w-5xl mx-auto py-20 gap-5'>
           <div className='col-span-1 text-center flex flex-col justify-center justify-items-center items-center'>
             <div className='h-24 w-24 mb-3 rounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
@@ -83,7 +104,16 @@ const About = () => {
                   Let work together
                 </a>
               </div>
-              <div className='col-span-3 space-y-3'>
+              <motion.div
+                ref={ref}
+                animate={controls}
+                initial='hidden'
+                transition={{ duration: 0.8 }}
+                variants={{
+                  visible: { opacity: 1, scale: 1 },
+                  hidden: { opacity: 0, scale: 0 },
+                }}
+                className='col-span-3 space-y-3'>
                 <h1 className=' text-lg font-semibold tracking-wider'>Professional Skills</h1>
                 <div className='html text-gray-100 px-2 py-1 flex justify-between'>
                   <span className='font-semibold '>HTML</span>
@@ -129,7 +159,7 @@ const About = () => {
                   <span className='font-semibold tracking-wider'>GraphQL</span>
                   <span className='text-gray-700'> 70%</span>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
