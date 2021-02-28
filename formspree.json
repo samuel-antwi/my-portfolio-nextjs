@@ -1,0 +1,17 @@
+{
+  "forms": {
+    "contactForm": {
+      "name": "Contact Form",
+      "fields": {
+        "Name": { "type": "text", "required": true },
+        "Email": { "type": "email", "required": true },
+        "Message": { "type": "text", "required": true }
+      },
+      "actions": [
+        { "type": "email", "to": "samuelantwidev@gmail.com" }
+      ],
+      "allowExtraFields": true
+    
+    }
+  }
+}

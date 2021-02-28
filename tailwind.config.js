@@ -9,6 +9,7 @@ module.exports = {
       textColor: (theme) => theme('colors'),
       textColor: {
         primary: '#e31c6d',
+        secondary: '#11ccc9',
       },
       backgroundColor: (theme) => ({
         ...theme('colors'),
@@ -17,6 +18,8 @@ module.exports = {
         secondary: '#11ccc9',
         nav: '#1b252f',
         portfolio: '#f5f5f5',
+        contact: '#252A34',
+        input: '#1e252c',
       }),
       borderColor: (theme) => ({
         ...theme('colors'),

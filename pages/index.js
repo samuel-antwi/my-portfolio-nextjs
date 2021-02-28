@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Nav from '../components/Nav';
 import About from '../components/About';
 import Portfolio from '../components/Portfolio';
+import Contact from '../components/Contact';
 
 export default function Home() {
   const [showDownArrow, setArrow] = useState(false);
@@ -34,6 +35,7 @@ export default function Home() {
       <Nav />
       <About />
       <Portfolio />
+      <Contact />
     </Layout>
   );
 }
