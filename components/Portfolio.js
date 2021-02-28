@@ -41,11 +41,11 @@ const Portfolio = () => {
 
   return (
     <>
-      <Styles className='text-gray-800 bg-portfolio py-20 '>
+      <Styles className='text-gray-800 bg-portfolio py-20 min-h-full '>
         <h1 className='text-center uppercase md:text-3xl font-semibold tracking-widest mb-3'>
           Projects
         </h1>
-        <div className='h-1 bg-gray-900 w-16 flex max-w-xs mx-auto mb-20'></div>
+        <div className='h-1 bg-gray-900 w-16 flex max-w-xs mx-auto md:mb-20'></div>
         <div className='md:grid grid-cols-3 max-w-6xl mx-auto gap-2'>
           {data.map((project, index) => {
             const { id, images, name, slug, skills, title } = project;
