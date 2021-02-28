@@ -9,20 +9,17 @@ const Contact = () => {
 
   return (
     <div className='bg-contact text-gray-100 min-h-screen py-20'>
-      <div className='max-w-xl mx-auto'>
-        <div data-aos='slide-right' data-aos-duration='1000'>
+      <div className='max-w-xl mx-auto px-6'>
+        <div>
           <h1 className='text-center uppercase md:text-3xl font-semibold tracking-widest mb-3'>
             Contact
           </h1>
           <div className='h-1 bg-gray-50 w-16 flex max-w-xs mx-auto'></div>
         </div>
-        <p
-          data-aos='slide-left'
-          data-aos-duration='1000'
-          className='py-10 text-secondary text-center'>
+        <p className='py-10 text-secondary text-center'>
           Have a question or want to work together?
         </p>
-        <div data-aos='flip-right' data-aos-duration='1000'>
+        <div>
           <form onSubmit={handleSubmit} className='space-y-1 text-gray-300'>
             <div>
               <input className='w-full p-2 bg-input' placeholder='Name' type='text' name='Name' />
@@ -53,7 +50,7 @@ const Contact = () => {
                 <ValidationError prefix='Message' field='Message' errors={state.errors} />
               </span>
             </div>
-            <div className='flex justify-end mr-4'>
+            <div className='flex justify-end '>
               <button
                 disabled={state.submitting}
                 className='border-2 px-6 tracking-wider hover:bg-secondary hover:border-secondary uppercase py-2 transition duration-500 ease-in-out'>
