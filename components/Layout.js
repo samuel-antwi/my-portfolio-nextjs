@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Footer from './Footer';
 import Nav from './Nav';
 
 const Layout = ({ children, title }) => {
@@ -8,6 +9,7 @@ const Layout = ({ children, title }) => {
         <title>{title}</title>
       </Head>
       <div>{children}</div>
+      <Footer />
     </div>
   );
 };
