@@ -53,36 +53,35 @@ const Portfolio = () => {
               <div className='project col-span-1 relative' key={id}>
                 <img src={images[0].url} alt={name} />
                 <div className='border-r-4 border-b-4 border-primary_1 overlay absolute shadow-lg bg-white top-0 right-0 left-0 bottom-0 p-5'>
-                  <div className='mb-20'>
-                    <h2 className='text-center mb-1 text-xl font-semibold tracking-wider text-gray-700'>
-                      {title}
-                    </h2>
-                    <div className='flex justify-center space-x-2'>
-                      {skills.map((skill, index) => (
-                        <p className='text-sm text-primary' key={index}>
-                          {skill}
-                        </p>
-                      ))}
+                  <div className='space-y-10'>
+                    <div className=''>
+                      <h2 className='text-center mb-1 text-xl font-semibold tracking-wider text-gray-700'>
+                        {title}
+                      </h2>
+                      <div className='flex justify-center space-x-2'>
+                        {skills.map((skill, index) => (
+                          <p className='text-sm text-primary' key={index}>
+                            {skill}
+                          </p>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                  <motion.div initial={{ y: 100 }} animate={{ y: 0 }} transition={{ duration: 3 }}>
                     <button
                       onClick={() => {
                         setProjectSlug(slug);
                         setShowProject(true);
                       }}
-                      className='transition duration-500 ease-in-out flex items-center  max-w-md mx-auto border-2 py-2 px-10 border-primary_1 hover:bg-primary_1 hover:text-white focus:outline-none'>
+                      className=' transition duration-500 ease-in-out flex items-center  max-w-md mx-auto border-2 py-2 px-10 border-primary_1 hover:bg-primary_1 hover:text-white focus:outline-none'>
                       View more
                     </button>
-                  </motion.div>
+                  </div>
                 </div>
                 {showProject && (
                   <ProjectDetail
                     loading={loading}
-                    data={data}
+                    setShowProject={setShowProject}
                     project={project}
                     slug={slug}
-                    setShowProject={setShowProject}
                     projectDetail={projectDetail}
                     setProjectDetail={setProjectDetail}
                   />
