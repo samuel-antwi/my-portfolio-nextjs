@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         futura: ['Futura', 'sans-serif'],
+        raleway: ['Raleway', 'sans-serif'],
       },
       textColor: (theme) => theme('colors'),
       textColor: {

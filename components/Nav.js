@@ -42,13 +42,7 @@ const Nav = () => {
 export default Nav;
 
 const Styles = styled.div`
-  a {
-    background: linear-gradient(to right, #11ccc9 50%, #252525 50%);
-    background-size: 200% 100%;
-    background-position: right bottom;
-    transition: all 0.5s ease-out;
-    &:hover {
-      background-position: left bottom;
-    }
+  a:hover {
+    color: #e31c6d;
   }
 `;
