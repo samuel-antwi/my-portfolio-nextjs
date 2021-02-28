@@ -34,10 +34,7 @@ const About = () => {
           className='h-1 bg-gray-900 w-10 flex max-w-xs mx-auto'></motion.div>
         <section className='grid md:grid-cols-4 grid-cols-2 md:max-w-5xl mx-auto py-20 gap-5 space-y-4 md:space-y-0 px-6'>
           <div className='col-span-1 text-center flex flex-col justify-center justify-items-center items-center'>
-            <div
-              data-aos='slide-right'
-              data-aos-duration='1000'
-              className='h-24 w-24 mb-3 rounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
+            <div className='h-24 w-24 mb-3 rounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
               <div className='relative'>
                 <FaLaptop size={50} className='text-gray-100' />
                 <FaMobile size={25} className='text-gray-100 absolute top-0 left-8' />
@@ -49,10 +46,7 @@ const About = () => {
             <p className='text-gray-500'>My layouts will work on any device, big or small..</p>
           </div>
           <div className='col-span-1 text-center flex flex-col justify-center justify-items-center items-center'>
-            <div
-              data-aos='slide-down'
-              data-aos-duration='1000'
-              className='h-24 w-24 mb-3 rounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
+            <div className='h-24 w-24 mb-3 rounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
               <div>
                 <ImAlarm size={50} className='text-gray-100' />
               </div>
@@ -63,10 +57,7 @@ const About = () => {
             </p>
           </div>
           <div className='col-span-1 text-center flex flex-col justify-center justify-items-center items-center'>
-            <div
-              data-aos='slide-up'
-              data-aos-duration='1000'
-              className='h-24 w-24 mb-3 rounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
+            <div className='h-24 w-24 mb-3 rounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
               <div>
                 <FaRegLightbulb size={50} className='text-gray-100' />
               </div>
@@ -79,10 +70,7 @@ const About = () => {
             </p>
           </div>
           <div className='col-span-1 text-center flex flex-col justify-center justify-items-center items-center'>
-            <div
-              data-aos='slide-left'
-              data-aos-duration='1000'
-              className='h-24 w-24 mb-3 rounded-tl-3xl rounded-br-3xlrounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
+            <div className='h-24 w-24 mb-3 rounded-tl-3xl rounded-br-3xlrounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
               <div>
                 <ImRocket size={50} className='text-gray-100' />
               </div>
