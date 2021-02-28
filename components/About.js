@@ -107,14 +107,15 @@ const About = () => {
                     hidden: { opacity: 0, scale: 0 },
                   }}>
                   <Image
-                    className=' mb-4 '
                     className='object-cover'
                     src={'/images/sam5.png'}
                     width={800}
                     height={980}
                   />
                 </motion.div>
-                <h1 className='md:text-2xl font-medium mb-3 text-center px-8'>Who am I?</h1>
+                <h1 className='md:text-2xl text-lg  font-semibold text-gray-700 py-4 text-center px-8'>
+                  Who am I?
+                </h1>
                 <p className='md:text-lg text-gray-600 text-center mb-1 px-8 md:px-0'>
                   I'm a Front-End Developer based in Mansfield, Nottinghamshire. My goal is to use
                   mordern stacks to build amazing web application that can have real positive impact

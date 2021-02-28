@@ -53,7 +53,7 @@ const Contact = () => {
                 <ValidationError prefix='Message' field='Message' errors={state.errors} />
               </span>
             </div>
-            <div className='flex justify-end'>
+            <div className='flex justify-end mr-4'>
               <button
                 disabled={state.submitting}
                 className='border-2 px-6 tracking-wider hover:bg-secondary hover:border-secondary uppercase py-2 transition duration-500 ease-in-out'>
