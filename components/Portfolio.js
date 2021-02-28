@@ -50,11 +50,7 @@ const Portfolio = () => {
           {data.map((project) => {
             const { id, images, name, slug, skills, title } = project;
             return (
-              <div
-                data-aos='flip-right'
-                data-aos-duration='1000'
-                className='project col-span-1 relative'
-                key={id}>
+              <div className='project col-span-1 relative' key={id}>
                 <img src={images[0].url} alt={name} />
                 <div className='border-r-4 border-b-4 border-primary_1 overlay absolute shadow-lg bg-white top-0 right-0 left-0 bottom-0 p-5'>
                   <div className='mb-20'>
