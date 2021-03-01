@@ -52,7 +52,7 @@ const Portfolio = () => {
             return (
               <div className='project col-span-1 relative' key={id}>
                 <img src={images[0].url} alt={name} />
-                <div className='border-r-4 border-b-4 border-primary_1 overlay absolute shadow-lg bg-white top-0 right-0 left-0 bottom-0 p-5'>
+                <div className='md:border-r-4 md:border-b-4 border-primary_1 overlay absolute shadow-lg bg-white top-0 right-0 left-0 bottom-0 p-5'>
                   <div className='space-y-10'>
                     <div className=''>
                       <h2 className='text-center mb-1 text-xl font-semibold tracking-wider text-gray-700'>
