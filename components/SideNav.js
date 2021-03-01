@@ -29,6 +29,7 @@ export default SideNav;
 const Links = ({ link, children, setOpen }) => {
   return (
     <Link
+      onClick={() => setOpen(false)}
       to={link}
       className='uppercase cursor-pointer text-gray-300 tracking-widest hover:text-primary text-sm'>
       {children}

@@ -31,7 +31,7 @@ const Home = () => {
             <div>
               <div className='md:text-4xl text-2xl text-center'>
                 {typewriter && (
-                  <div className='text-gray-400'>
+                  <div className='text-gray-400 font-futura'>
                     <Typewriter
                       options={{
                         strings: [' Thank you for visiting my portfolio..'],
@@ -43,8 +43,8 @@ const Home = () => {
                 )}
                 {show && (
                   <motion.div
-                    initial={{ x: -500 }}
-                    animate={{ x: 0 }}
+                    initial={{ y: -500 }}
+                    animate={{ y: 0 }}
                     transition={{ duration: 0.8 }}>
                     <h3 className='mb-1'>
                       Hello, I'm <span className='text-primary capitalize'>samuel antwi.</span>
