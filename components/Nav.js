@@ -17,7 +17,7 @@ const Nav = () => {
           </div>
         </div>
         <div className='md:hidden'>
-          <div className='flex justify-center'>
+          <div className='flex justify-end'>
             <Hamburger toggled={isOpen} toggle={setOpen} duration={0.8} size={28} />
           </div>
         </div>
