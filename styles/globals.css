@@ -12,6 +12,13 @@
   background: -o-linear-gradient(left, #11ccc9 70%, #ece5f0 70%);
   background: linear-gradient(to right, #11ccc9 70%, #ece5f0 70%);
 }
+.react {
+  background: -webkit-linear-gradient(left, #11ccc9 70%, #ece5f0 70%);
+  background: -moz-linear-gradient(left, #11ccc9 70%, #ece5f0 70%);
+  background: -ms-linear-gradient(left, #11ccc9 70%, #ece5f0 70%);
+  background: -o-linear-gradient(left, #11ccc9 70%, #ece5f0 70%);
+  background: linear-gradient(to right, #11ccc9 70%, #ece5f0 70%);
+}
 
 @keyframes customEnterOverlayAnimation {
   0% {

@@ -1,10 +1,11 @@
 import { ImAlarm, ImRocket } from 'react-icons/im';
-import { GiAerodynamicHarpoon } from 'react-icons/gi';
 import { FaLaptop, FaMobile, FaRegLightbulb } from 'react-icons/fa';
 import Image from 'next/image';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
+import { Link } from 'react-scroll';
+import styled from 'styled-components';
 
 const About = () => {
   const controls = useAnimation();
@@ -17,7 +18,7 @@ const About = () => {
   }, [controls, inView]);
 
   return (
-    <div className='min-h-screen text-gray-700'>
+    <div className='about min-h-screen text-gray-700'>
       <div className='py-20'>
         <h1 className='text-center uppercase md:text-3xl font-semibold tracking-widest mb-3'>
           About
@@ -43,7 +44,9 @@ const About = () => {
             <h1 className='mb-2 md:text-2xl font-semibold text-gray-600 tracking-wider'>
               Responvie
             </h1>
-            <p className='text-gray-500'>My layouts will work on any device, big or small..</p>
+            <p className='text-gray-500'>
+              We are not in 90's. Don't pay extra for responsive website.
+            </p>
           </div>
           <div className='col-span-1 text-center flex flex-col justify-center justify-items-center items-center'>
             <div className='h-24 w-24 mb-3 rounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
@@ -52,9 +55,7 @@ const About = () => {
               </div>
             </div>
             <h1 className='mb-2 md:text-2xl font-semibold text-gray-600 tracking-wider'>Fast</h1>
-            <p className='text-gray-500'>
-              Fast load times and lag free interaction, my highest priority.
-            </p>
+            <p className='text-gray-500'>Fast load times. This is the reason I love NextJS</p>
           </div>
           <div className='col-span-1 text-center flex flex-col justify-center justify-items-center items-center'>
             <div className='h-24 w-24 mb-3 rounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
@@ -77,7 +78,7 @@ const About = () => {
             </div>
             <h1 className='mb-2 md:text-2xl font-semibold text-gray-600 tracking-wider'>Dynamic</h1>
             <p className='text-gray-500'>
-              Websites don't have to be static, I love making pages come to life..
+              Websites don't have to be static. My goal is to make pages come to life
             </p>
           </div>
         </section>
@@ -99,6 +100,7 @@ const About = () => {
                     src={'/images/sam5.png'}
                     width={800}
                     height={980}
+                    priority
                   />
                 </motion.div>
                 <h1 className='md:text-2xl text-lg  font-semibold text-gray-700 py-4 text-center px-8'>
@@ -109,11 +111,11 @@ const About = () => {
                   mordern stacks to build amazing web application that can have real positive impact
                   in people's life without compromising their experience.
                 </p>
-                <a
-                  className='text-blue-400 hover:underline text-center block text-lg tracking-wider mb-10'
-                  href='/'>
+                <Link
+                  to='contact'
+                  className='cursor-pointer text-blue-400 hover:underline text-center block text-lg tracking-wider mb-10'>
                   Let work together
-                </a>
+                </Link>
               </div>
               <motion.div
                 ref={ref}
@@ -126,16 +128,18 @@ const About = () => {
                 }}
                 className='col-span-3 space-y-3 px-8'>
                 <h1 className=' text-lg font-semibold tracking-wider'>Professional Skills</h1>
-                <Skill skill='HTML' level='80%' className='html' />
-                <Skill skill='CSS' level='75%' className='css' />
-                <Skill skill='React/Next' level='75%' className='css' />
-                <Skill skill='Headless CMS' level='75%' className='css' />
-                <Skill skill='Git' level='75%' className='css' />
-                <Skill skill='Jira' level='75%' className='css' />
-                <Skill skill='Scrum' level='75%' className='css' />
-                <Skill skill='Agile' level='75%' className='css' />
-                <Skill skill='Firebase' level='75%' className='css' />
-                <Skill skill='GraphQL' level='75%' className='css' />
+                <Skill skill='HTML' />
+                <Skill skill='CSS' />
+                <Skill skill='JavaScript' />
+                <Skill skill='React/Next' />
+                <Skill skill='Headless CMS' />
+                <Skill skill='Git' />
+                <Skill skill='Jira' />
+                <Skill skill='Scrum' />
+                <Skill skill='Agile' />
+                <Skill skill='Firebase' />
+                <Skill skill='GraphQL' />
+                <Skill skill='REST' />
               </motion.div>
             </div>
           </div>
@@ -147,11 +151,13 @@ const About = () => {
 
 export default About;
 
-export const Skill = ({ skill, level, className }) => {
+export const Skill = ({ skill, level }) => {
   return (
-    <div className={`${className} text-gray-100 px-2 py-1 flex justify-between`}>
+    <Styles className={` bg-secondary text-gray-100 px-2 py-1 flex justify-between`}>
       <span className='font-semibold tracking-wider'>{skill}</span>
       <span className='text-gray-700'> {level}</span>
-    </div>
+    </Styles>
   );
 };
+
+const Styles = styled.div``;

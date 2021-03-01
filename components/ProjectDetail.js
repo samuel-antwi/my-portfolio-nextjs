@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { VscChromeClose } from 'react-icons/vsc';
 import { BsBoxArrowUpRight } from 'react-icons/bs';
-const ProjectDetail = ({ setShowProject, projectDetail, setProjectDetail, loading }) => {
+import { useState } from 'react';
+
+const ProjectDetail = ({ setShowProject, projectDetail, loading }) => {
   if (!projectDetail) return null;
 
   if (loading) return null;
@@ -9,7 +11,7 @@ const ProjectDetail = ({ setShowProject, projectDetail, setProjectDetail, loadin
   const { images, title, projectDescription } = projectDetail;
 
   return (
-    <Styles className=''>
+    <Styles onClick={() => setShowProject(false)}>
       <div className='flex justify-center items-center inset-0 justify-items-center max-w-3xl mx-auto'>
         <div className=' bg-white w-full mt-24 text-gray-800'>
           <img className='border-b-2 border-primary_1' src={images[0].url} alt={title} />
