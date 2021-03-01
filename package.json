@@ -21,8 +21,10 @@
     "react-intersection-observer": "^8.31.0",
     "react-query": "^3.12.0",
     "react-responsive-modal": "^6.0.1",
+    "react-scroll": "^1.8.1",
     "react-tsparticles": "^1.18.12",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "typewriter-effect": "^2.17.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.4",
