@@ -1,6 +1,5 @@
 import Layout from '../components/Layout';
 import { BsArrowDown, BsArrowRight } from 'react-icons/bs';
-import Particles from 'react-tsparticles';
 import { useEffect, useState } from 'react';
 import Nav from '../components/Nav';
 import About from '../components/About';
@@ -10,6 +9,7 @@ import Contact from '../components/Contact';
 import { Link } from 'react-scroll';
 import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
+import Background from '../components/Background';
 
 const Home = () => {
   const [showDownArrow, setArrow] = useState(false);
@@ -25,7 +25,8 @@ const Home = () => {
 
   return (
     <Layout>
-      <div className='home  text-gray-50 bg-primary font-raleway'>
+      <Background />
+      <div className='home  text-gray-50  font-raleway absolute top-0 right-0 left-0 bottom-0'>
         <div className='container mx-auto '>
           <div className='flex justify-center items-center justify-items-center inset-0 min-h-screen'>
             <div>
