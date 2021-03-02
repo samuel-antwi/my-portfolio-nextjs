@@ -6,6 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import { Link } from 'react-scroll';
 import styled from 'styled-components';
+import { MdPlayArrow } from 'react-icons/md';
 
 const About = () => {
   const controls = useAnimation();
@@ -117,21 +118,24 @@ const About = () => {
                 application.
               </p>
               <p>If I am not writing code, it means I am busy DJing. 💿 🎵</p>
-              <ul className='pt-5 flex  flex-wrap text-secondary'>
-                <li>HTML/CSS</li>
-                <li>JavaScript</li>
-                <li>React/NextJS</li>
-                <li>Headless CMS</li>
-                <li>Firebase</li>
-                <li>Responsive Design</li>
-                <li>Git</li>
-                <li>Jira</li>
-                <li>Agile</li>
-              </ul>
+              <div className='flex flex-wrap pt-5 '>
+                <Skill skill='HTML' />
+                <Skill skill='CSS' />
+                <Skill skill='JavaScript' />
+                <Skill skill='Recat/NextJS' />
+                <Skill skill='Headless CMS' />
+                <Skill skill='Firebase' />
+                <Skill skill='REST' />
+                <Skill skill='GraphQL' />
+                <Skill skill='Responsive design' />
+                <Skill skill='Git' />
+                <Skill skill='Jira' />
+                <Skill skill='Agile' />
+              </div>
             </div>
             <Link
               to='contact'
-              className='cursor-pointer text-blue-400 hover:underline pt-3 block text-lg tracking-wider mb-10'>
+              className='cursor-pointer text-blue-400 hover:underline pt-1 block text-lg tracking-wider mb-10'>
               Let work together
             </Link>
           </div>
@@ -143,13 +147,11 @@ const About = () => {
 
 export default About;
 
-export const Skill = ({ skill, level }) => {
+export const Skill = ({ skill }) => {
   return (
-    <Styles className={` bg-secondary text-gray-100 px-2 py-1 flex justify-between`}>
-      <span className='font-semibold tracking-wider'>{skill}</span>
-      <span className='text-gray-700'> {level}</span>
-    </Styles>
+    <div className='flex items-center py-1 pr-2 '>
+      <MdPlayArrow className='text-primary' />
+      <p className='font-semibold tracking-wider text-sm'>{skill}</p>
+    </div>
   );
 };
-
-const Styles = styled.div``;

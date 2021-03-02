@@ -51,15 +51,17 @@ const Home = () => {
                       Hello, I'm <span className='text-primary capitalize'>samuel antwi.</span>
                     </h3>
                     <h3 className='mb-5'>I'm a Front-end developer.</h3>
-                    <Button
-                      onMouseOver={() => setArrow(true)}
-                      onMouseLeave={() => setArrow(false)}
-                      className=' flex items-center justify-center text-base justify-items-center w-48 mx-auto  border-2 p-2   text-white capitalize '>
-                      <Link to='about' className='mr-1 md:text-lg text-base'>
+                    <Styles>
+                      <Link
+                        to='about'
+                        className='mr-1 md:text-lg text-base '
+                        onMouseOver={() => setArrow(true)}
+                        onMouseLeave={() => setArrow(false)}
+                        className=' flex items-center justify-center text-base justify-items-center w-48 mx-auto  border-2 p-2   text-white capitalize '>
                         View my work
+                        {showDownArrow ? <BsArrowDown /> : <BsArrowRight />}
                       </Link>
-                      {showDownArrow ? <BsArrowDown /> : <BsArrowRight />}
-                    </Button>
+                    </Styles>
                   </motion.div>
                 )}
               </div>
@@ -77,14 +79,16 @@ const Home = () => {
 
 export default Home;
 
-const Button = styled.div`
-  background: linear-gradient(to right, #11ccc9 50%, #252a35 50%);
-  background-size: 200% 100%;
-  background-position: right bottom;
-  transition: all 0.5s ease-out;
-  &:hover {
-    background-position: left bottom;
-    border: #252a35;
-    cursor: pointer;
+const Styles = styled.div`
+  a {
+    background: linear-gradient(to right, #11ccc9 50%, #252a35 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all 0.5s ease-out;
+    &:hover {
+      background-position: left bottom;
+      border: #252a35;
+      cursor: pointer;
+    }
   }
 `;

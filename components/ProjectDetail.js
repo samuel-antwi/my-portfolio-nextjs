@@ -7,7 +7,7 @@ const ProjectDetail = ({ setShowProject, projectDetail, loading }) => {
 
   if (loading) return null;
 
-  const { images, title, projectDescription } = projectDetail;
+  const { images, title, projectDescription, links } = projectDetail;
 
   return (
     <Styles onClick={() => setShowProject(false)}>
@@ -20,8 +20,10 @@ const ProjectDetail = ({ setShowProject, projectDetail, loading }) => {
             <p className='py-5 text-gray-500'>{projectDescription}</p>
             <div className='flex items-center justify-between'>
               <a
+                target='_blank'
+                rel='noreferrer noopener'
                 className='flex items-center transition duration-500 ease-in-out bg-primary_1 text-white py-2 px-3 uppercase tracking-wide text-sm hover:bg-white hover:text-primary'
-                href='/'>
+                href={links[0]}>
                 <BsBoxArrowUpRight className='mr-3' size={18} />
                 View Site
               </a>

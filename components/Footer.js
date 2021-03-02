@@ -16,9 +16,9 @@ const Footer = () => {
         <SocialLinks link='https://github.com/samuel-antwi' icon={<FaGithub />} />
         <SocialLinks link='https://twitter.com/_devantwi' icon={<FaTwitter />} />
       </div>
-      <div className='text-gray-600 uppercase flex justify-items-center items-center justify-center'>
+      <div className='text-gray-400 uppercase flex justify-items-center items-center justify-center'>
         <p className='text-sm'>
-          Samuel Antwi <span className='text-primary'> &#169; {getYear} </span>
+          Samuel Antwi <span className='text-primary'> &#169; 2019 - {getYear} </span>
         </p>
       </div>
     </div>

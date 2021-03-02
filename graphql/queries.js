@@ -2,7 +2,7 @@ import { gql } from 'graphql-request';
 
 export const GET_ALL_PROJECTS = gql`
   query getProjects {
-    projects {
+    projects(orderBy: rank_ASC) {
       id
       images {
         url
@@ -26,6 +26,7 @@ export const GET_PROJECT = gql`
       }
       projectDescription
       id
+      links
       images {
         url
       }
