@@ -1,5 +1,5 @@
 import { ImAlarm, ImRocket } from 'react-icons/im';
-import { FaLaptop, FaMobile, FaRegLightbulb } from 'react-icons/fa';
+import { FaLaptop, FaRegLightbulb } from 'react-icons/fa';
 import Image from 'next/image';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-scroll';
 import styled from 'styled-components';
 import { MdPlayArrow } from 'react-icons/md';
+import { FaHandsHelping } from 'react-icons/fa';
 
 const About = () => {
   const controls = useAnimation();
@@ -19,12 +20,38 @@ const About = () => {
   }, [controls, inView]);
 
   return (
-    <Styles className='about min-h-screen bg-primary text-gray-200'>
-      <div className='py-20'>
+    <Styles className='about font-raleway min-h-screen bg-primary py-20 text-gray-200'>
+      <div className='pb-20'>
         <h1 className='text-center uppercase md:text-3xl text-xl font-semibold tracking-widest mb-3'>
           About
         </h1>
+        <div className='h-1 bg-gray-200 w-10 flex max-w-xs mx-auto'></div>
+      </div>
+      <section className='grid md:grid-cols-4 grid-cols-2 md:mb-20 mb-10  md:max-w-5xl mx-auto  gap-10 px-4'>
+        <SkillsGrid
+          icon={<FaLaptop size={50} />}
+          title='Responsive'
+          description=" We are not in 90's. Don't pay extra for responsive website."
+        />
+        <SkillsGrid
+          icon={<ImAlarm size={50} />}
+          title='Fast'
+          description='Fast load times. This is the reason I love NextJS'
+        />
+        <SkillsGrid
+          icon={<FaRegLightbulb size={50} />}
+          title='Intuitive'
+          description='Strong preference for easy to use, intuitive UX/UI. Dynamic'
+        />
+        <SkillsGrid
+          icon={<ImRocket size={50} />}
+          title='Dynamic'
+          description="Websites don't have to be static. My goal is to make pages come to life."
+        />
+      </section>
+      <section className='md:grid grid-cols-4 gap-10 max-w-4xl mx-auto'>
         <motion.div
+          className='col-span-2'
           ref={ref}
           animate={controls}
           initial='hidden'
@@ -32,116 +59,54 @@ const About = () => {
           variants={{
             visible: { opacity: 1, scale: 1 },
             hidden: { opacity: 0, scale: 0 },
-          }}
-          className='h-1 bg-gray-200 w-10 flex max-w-xs mx-auto'></motion.div>
-        <section className='grid md:grid-cols-4 xs:grid-cols-2 md:max-w-5xl mx-auto py-20 gap-5 space-y-4 md:space-y-0 px-6'>
-          <div className='col-span-1 text-center flex flex-col justify-center justify-items-center items-center'>
-            <div className='xs:h-24 xs:w-24 h-20 w-20 mb-3 rounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
-              <FaLaptop size={50} className='absolute text-gray-100' />
-            </div>
-            <h1 className='mb-2 md:text-2xl text-xl font-semibold text-gray-100 tracking-wider'>
-              Responvie
-            </h1>
-            <p className='text-gray-300'>
-              We are not in 90's. Don't pay extra for responsive website.
+          }}>
+          <Image
+            className='object-cover'
+            src={'/images/sam5.png'}
+            width={800}
+            height={980}
+            priority
+          />
+          <Link
+            to='contact'
+            className='cursor-pointer flex items-center  px-8 md:px-0 text-blue-400 hover:underline pt-1 text-lg tracking-wider mb-10'>
+            Let work together
+            <FaHandsHelping className='ml-2' />
+          </Link>
+        </motion.div>
+        <div data-aos='fade-in' className='col-span-2 xs:px-8 px-4 md:px-0'>
+          <h1 className='md:text-2xl text-lg tracking-wider  font-semibold text-secondary py-4'>
+            Who am I?
+          </h1>
+          <div className='xs:text-lg text-sm text-gray-300  mb-1  tracking-wide font-raleway'>
+            <p>
+              I'm a Front-End Developer based in Mansfield, Nottinghamshire. My goal is to use
+              mordern stacks to build amazing web application that can have real positive impact in
+              people's life without compromising their experience.
             </p>
-          </div>
-          <div className='col-span-1 text-center flex flex-col justify-center justify-items-center items-center'>
-            <div className='xs:h-24 xs:w-24 h-20 w-20 mb-3 rounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
-              <div>
-                <ImAlarm size={50} className='text-gray-100' />
-              </div>
-            </div>
-            <h1 className='mb-2 md:text-2xl text-xl  font-semibold text-gray-100 tracking-wider'>
-              Fast
-            </h1>
-            <p className='text-gray-300'>Fast load times. This is the reason I love NextJS</p>
-          </div>
-          <div className='col-span-1 text-center flex flex-col justify-center justify-items-center items-center'>
-            <div className='xs:h-24 xs:w-24 h-20 w-20 mb-3 rounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
-              <div>
-                <FaRegLightbulb size={50} className='text-gray-100' />
-              </div>
-            </div>
-            <h1 className='mb-2 md:text-2xl text-xl  font-semibold text-gray-100 tracking-wider'>
-              Intuitive
-            </h1>
-            <p className='text-gray-300'>
-              Strong preference for easy to use, intuitive UX/UI. Dynamic .
+            <p>
+              I have a genuine passion for tech and I always do my best to keep up with the latest
+              technologies and tools that help frontend developers to build a fully-fledged web
+              application.
             </p>
-          </div>
-          <div className='col-span-1 text-center flex flex-col justify-center justify-items-center items-center'>
-            <div className='xs:h-24 xs:w-24 h-20 w-20 mb-3 rounded-tl-3xl rounded-br-3xlrounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
-              <div>
-                <ImRocket size={50} className='text-gray-100' />
-              </div>
+            <p>If I am not writing code, it means I am busy DJing. 💿 🎵</p>
+            <div className='flex flex-wrap pt-3 '>
+              <Skill skill='HTML' />
+              <Skill skill='CSS' />
+              <Skill skill='JavaScript' />
+              <Skill skill='Recat/NextJS' />
+              <Skill skill='Headless CMS' />
+              <Skill skill='Firebase' />
+              <Skill skill='REST' />
+              <Skill skill='GraphQL' />
+              <Skill skill='Responsive design' />
+              <Skill skill='Git' />
+              <Skill skill='Jira' />
+              <Skill skill='Agile' />
             </div>
-            <h1 className='mb-2 md:text-2xl text-xl  font-semibold text-gray-100 tracking-wider'>
-              Dynamic
-            </h1>
-            <p className='text-gray-300'>
-              Websites don't have to be static. My goal is to make pages come to life
-            </p>
           </div>
-        </section>
-        <section className='md:grid grid-cols-4 gap-10 max-w-4xl mx-auto'>
-          <motion.div
-            className='col-span-2'
-            ref={ref}
-            animate={controls}
-            initial='hidden'
-            transition={{ duration: 0.8 }}
-            variants={{
-              visible: { opacity: 1, scale: 1 },
-              hidden: { opacity: 0, scale: 0 },
-            }}>
-            <Image
-              className='object-cover'
-              src={'/images/sam5.png'}
-              width={800}
-              height={980}
-              priority
-            />
-          </motion.div>
-          <div className='col-span-2 xs:px-8 px-4 md:px-0'>
-            <h1 className='md:text-2xl text-lg tracking-wider  font-semibold text-gray-100 py-4'>
-              Who am I?
-            </h1>
-            <div className='xs:text-lg text-sm text-gray-300  mb-1  tracking-wide font-raleway'>
-              <p>
-                I'm a Front-End Developer based in Mansfield, Nottinghamshire. My goal is to use
-                mordern stacks to build amazing web application that can have real positive impact
-                in people's life without compromising their experience.
-              </p>
-              <p>
-                I have a genuine passion for tech and I always do my best to keep up with the latest
-                technologies and tools that help frontend developers to build a fully-fledged web
-                application.
-              </p>
-              <p>If I am not writing code, it means I am busy DJing. 💿 🎵</p>
-              <div className='flex flex-wrap pt-5 '>
-                <Skill skill='HTML' />
-                <Skill skill='CSS' />
-                <Skill skill='JavaScript' />
-                <Skill skill='Recat/NextJS' />
-                <Skill skill='Headless CMS' />
-                <Skill skill='Firebase' />
-                <Skill skill='REST' />
-                <Skill skill='GraphQL' />
-                <Skill skill='Responsive design' />
-                <Skill skill='Git' />
-                <Skill skill='Jira' />
-                <Skill skill='Agile' />
-              </div>
-            </div>
-            <Link
-              to='contact'
-              className='cursor-pointer text-blue-400 hover:underline pt-1 block text-lg tracking-wider mb-10'>
-              Let work together
-            </Link>
-          </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </Styles>
   );
 };
@@ -153,6 +118,22 @@ export const Skill = ({ skill }) => {
     <div className='flex items-center py-1 pr-2 '>
       <MdPlayArrow className='text-primary' />
       <p className='font-semibold tracking-wider text-sm'>{skill}</p>
+    </div>
+  );
+};
+
+const SkillsGrid = ({ title, description, icon }) => {
+  return (
+    <div className='text-center '>
+      <div className='flex justify-center items-center'>
+        <div className='sm:h-24 xs:w-24 h-20 w-20 mb-3 rounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center items-center'>
+          <div className='absolute text-gray-100'>{icon}</div>
+        </div>
+      </div>
+      <h1 className='mb-2 md:text-2xl text-xl font-semibold text-gray-100 tracking-wider'>
+        {title}
+      </h1>
+      <p className='text-gray-500  text-xs md:text-base'>{description}</p>
     </div>
   );
 };

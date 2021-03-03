@@ -10,14 +10,14 @@ const Project = ({ setShowProject, projectDetail, loading }) => {
 
   const { images, title, projectDescription, links, skills } = projectDetail;
   return (
-    <Styles className='md:pt-40 pt-10 text-gray-100 absolute z-20'>
+    <Styles className='md:pt-40 font-raleway pt-10 text-gray-100 absolute z-20'>
       <button
         onClick={() => setShowProject(false)}
         className='absolute top-5 right-5 text-gray-400 md:text-5xl text-2xl'>
         <MdClose />
       </button>
       <div className='max-w-6xl mx-auto'>
-        <h1 className='title md:mb-20 text-2xl md:text-6xl font text-gray-300 mb-10 text-center'>
+        <h1 className='animate-bounce md:mb-20 text-2xl md:text-6xl font text-gray-300 mb-10 text-center'>
           {title}
         </h1>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 bg-primary p-6'>
