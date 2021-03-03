@@ -19,9 +19,9 @@ const About = () => {
   }, [controls, inView]);
 
   return (
-    <div className='about min-h-screen bg-primary text-gray-200'>
+    <Styles className='about min-h-screen bg-primary text-gray-200'>
       <div className='py-20'>
-        <h1 className='text-center uppercase md:text-3xl font-semibold tracking-widest mb-3'>
+        <h1 className='text-center uppercase md:text-3xl text-xl font-semibold tracking-widest mb-3'>
           About
         </h1>
         <motion.div
@@ -34,15 +34,12 @@ const About = () => {
             hidden: { opacity: 0, scale: 0 },
           }}
           className='h-1 bg-gray-200 w-10 flex max-w-xs mx-auto'></motion.div>
-        <section className='grid md:grid-cols-4 grid-cols-2 md:max-w-5xl mx-auto py-20 gap-5 space-y-4 md:space-y-0 px-6'>
+        <section className='grid md:grid-cols-4 xs:grid-cols-2 md:max-w-5xl mx-auto py-20 gap-5 space-y-4 md:space-y-0 px-6'>
           <div className='col-span-1 text-center flex flex-col justify-center justify-items-center items-center'>
-            <div className='h-24 w-24 mb-3 rounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
-              <div className='relative'>
-                <FaLaptop size={50} className='text-gray-100' />
-                <FaMobile size={25} className='text-gray-100 absolute top-0 left-8' />
-              </div>
+            <div className='xs:h-24 xs:w-24 h-20 w-20 mb-3 rounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
+              <FaLaptop size={50} className='absolute text-gray-100' />
             </div>
-            <h1 className='mb-2 md:text-2xl font-semibold text-gray-100 tracking-wider'>
+            <h1 className='mb-2 md:text-2xl text-xl font-semibold text-gray-100 tracking-wider'>
               Responvie
             </h1>
             <p className='text-gray-300'>
@@ -50,21 +47,23 @@ const About = () => {
             </p>
           </div>
           <div className='col-span-1 text-center flex flex-col justify-center justify-items-center items-center'>
-            <div className='h-24 w-24 mb-3 rounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
+            <div className='xs:h-24 xs:w-24 h-20 w-20 mb-3 rounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
               <div>
                 <ImAlarm size={50} className='text-gray-100' />
               </div>
             </div>
-            <h1 className='mb-2 md:text-2xl font-semibold text-gray-100 tracking-wider'>Fast</h1>
+            <h1 className='mb-2 md:text-2xl text-xl  font-semibold text-gray-100 tracking-wider'>
+              Fast
+            </h1>
             <p className='text-gray-300'>Fast load times. This is the reason I love NextJS</p>
           </div>
           <div className='col-span-1 text-center flex flex-col justify-center justify-items-center items-center'>
-            <div className='h-24 w-24 mb-3 rounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
+            <div className='xs:h-24 xs:w-24 h-20 w-20 mb-3 rounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
               <div>
                 <FaRegLightbulb size={50} className='text-gray-100' />
               </div>
             </div>
-            <h1 className='mb-2 md:text-2xl font-semibold text-gray-100 tracking-wider'>
+            <h1 className='mb-2 md:text-2xl text-xl  font-semibold text-gray-100 tracking-wider'>
               Intuitive
             </h1>
             <p className='text-gray-300'>
@@ -72,12 +71,14 @@ const About = () => {
             </p>
           </div>
           <div className='col-span-1 text-center flex flex-col justify-center justify-items-center items-center'>
-            <div className='h-24 w-24 mb-3 rounded-tl-3xl rounded-br-3xlrounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
+            <div className='xs:h-24 xs:w-24 h-20 w-20 mb-3 rounded-tl-3xl rounded-br-3xlrounded-tl-3xl rounded-br-3xl bg-secondary flex justify-center justify-items-center items-center'>
               <div>
                 <ImRocket size={50} className='text-gray-100' />
               </div>
             </div>
-            <h1 className='mb-2 md:text-2xl font-semibold text-gray-100 tracking-wider'>Dynamic</h1>
+            <h1 className='mb-2 md:text-2xl text-xl  font-semibold text-gray-100 tracking-wider'>
+              Dynamic
+            </h1>
             <p className='text-gray-300'>
               Websites don't have to be static. My goal is to make pages come to life
             </p>
@@ -102,11 +103,11 @@ const About = () => {
               priority
             />
           </motion.div>
-          <div className='col-span-2 px-8 md:px-0'>
+          <div className='col-span-2 xs:px-8 px-4 md:px-0'>
             <h1 className='md:text-2xl text-lg tracking-wider  font-semibold text-gray-100 py-4'>
               Who am I?
             </h1>
-            <div className='md:text-lg text-gray-300  mb-1  tracking-wide font-raleway'>
+            <div className='xs:text-lg text-sm text-gray-300  mb-1  tracking-wide font-raleway'>
               <p>
                 I'm a Front-End Developer based in Mansfield, Nottinghamshire. My goal is to use
                 mordern stacks to build amazing web application that can have real positive impact
@@ -141,7 +142,7 @@ const About = () => {
           </div>
         </section>
       </div>
-    </div>
+    </Styles>
   );
 };
 
@@ -155,3 +156,5 @@ export const Skill = ({ skill }) => {
     </div>
   );
 };
+
+export const Styles = styled.div``;

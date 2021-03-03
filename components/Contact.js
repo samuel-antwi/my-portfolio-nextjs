@@ -15,10 +15,10 @@ const Contact = () => {
   }
 
   return (
-    <div className='contact bg-contact text-gray-100 min-h-screen py-20'>
-      <div className='max-w-xl mx-auto px-6'>
+    <div className='contact bg-contact text-gray-100  py-20'>
+      <div className='max-w-xl mx-auto xs:px-6 px-4'>
         <div>
-          <h1 className='text-center uppercase md:text-3xl font-semibold tracking-widest mb-3'>
+          <h1 className='text-center uppercase md:text-3xl text-xl font-semibold tracking-widest mb-3'>
             Contact
           </h1>
           <div className='h-1 bg-gray-50 w-16 flex max-w-xs mx-auto'></div>
@@ -27,7 +27,7 @@ const Contact = () => {
           Have a question or want to work together?
         </p>
         <div>
-          <form onSubmit={handleSubmit} className='space-y-1 text-gray-300'>
+          <form onSubmit={handleSubmit} className='space-y-1 mb-10 text-gray-300'>
             <div>
               <input className='w-full p-2 bg-input' placeholder='Name' type='text' name='Name' />
               <span className='text-red-200 text-xs'>
@@ -59,10 +59,10 @@ const Contact = () => {
               </span>
             </div>
             <div className='flex justify-between '>
-              <p className='text-gray-400'>{characters} / 3000</p>
+              <p className='text-gray-400 text-sm'>{characters} / 3000</p>
               <button
                 disabled={state.submitting}
-                className='border-2 px-6 tracking-wider hover:bg-secondary hover:border-secondary uppercase py-2 transition duration-500 ease-in-out'>
+                className='border-2 text-sm tracking-wider hover:bg-secondary hover:border-secondary uppercase xs:py-2 py-1 px-3  xs:px-6 transition duration-500 ease-in-out'>
                 {state.submitting ? ' Submiting' : 'Submit'}
               </button>
             </div>

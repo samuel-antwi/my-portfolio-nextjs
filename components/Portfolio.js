@@ -43,7 +43,7 @@ const Portfolio = () => {
   return (
     <>
       <Styles className='portfolio text-gray-100  bg-input md:py-20 py-10'>
-        <h1 className='text-center uppercase md:text-3xl font-semibold tracking-widest mb-3'>
+        <h1 className='text-center uppercase md:text-3xl text-xl font-semibold tracking-widest mb-3'>
           Projects
         </h1>
         <div className='h-1 bg-gray-200 w-16 flex max-w-xs mx-auto md:mb-20 mb-10'></div>
