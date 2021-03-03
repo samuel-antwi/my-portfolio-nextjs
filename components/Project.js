@@ -10,7 +10,7 @@ const Project = ({ setShowProject, projectDetail, loading }) => {
 
   const { images, title, projectDescription, links, skills } = projectDetail;
   return (
-    <Styles className='md:pt-40 pt-10 text-gray-100 absolute top-0 right-0 left-0 bottom-0 z-20'>
+    <Styles className='md:pt-40 pt-10 text-gray-100 absolute z-20'>
       <button
         onClick={() => setShowProject(false)}
         className='absolute top-5 right-5 text-gray-400 md:text-5xl text-2xl'>
@@ -46,9 +46,9 @@ const Project = ({ setShowProject, projectDetail, loading }) => {
                 </span>
               ))}
             </div>
-            <div className=' pt-10 md:pt-20 project__links'>
+            <div className=' pt-10 md:pt-20 project__links flex items-center justify-between'>
               <a
-                className='  mr-10 px-4 py-3 hover:text-gray-400'
+                className='px-4 py-2 xs:text-base text-xs hover:text-gray-200'
                 href={links[0]}
                 target='_blank'
                 rel='noopener noreferrer'>
@@ -56,11 +56,11 @@ const Project = ({ setShowProject, projectDetail, loading }) => {
               </a>
               {title !== 'Virtual peer' && (
                 <a
-                  className='px-4 py-3 hover:text-gray-400'
+                  className='px-4 py-2 xs:text-base text-xs hover:text-gray-200'
                   href={links[1]}
                   target='_blank'
                   rel='noopener noreferrer'>
-                  View code on Github
+                  Code on Github
                 </a>
               )}
             </div>
@@ -79,6 +79,7 @@ const Styles = styled.div`
   position: fixed;
   height: 100%;
   width: 100%;
+  overflow-y: scroll;
   top: 0;
   left: 0;
   transform: scale(0);
@@ -136,7 +137,7 @@ const Styles = styled.div`
   }
 
   .project__links a {
-    background: linear-gradient(to right, #252525 50%, #11ccc9 50%);
+    background: linear-gradient(to right, #e31c6d 50%, #11ccc9 50%);
     background-size: 200% 100%;
     background-position: right bottom;
     transition: all 0.5s ease-out;

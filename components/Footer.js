@@ -33,7 +33,7 @@ export const SocialLinks = ({ link, icon }) => {
       href={link}
       target='_blank '
       rel='noreferrer noopener'
-      className='bg-primary p-4 hover:bg-secondary transition ease-in-out duration-300 transform hover:-translate-y-1 hover:scale-110'>
+      className='bg-primary xs:p-4 p-2 hover:bg-secondary transition ease-in-out duration-300 transform hover:-translate-y-1 hover:scale-110'>
       {icon}
     </a>
   );
