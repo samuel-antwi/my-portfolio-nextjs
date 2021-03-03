@@ -42,7 +42,7 @@ const Portfolio = () => {
 
   return (
     <>
-      <Styles className='portfolio text-gray-100  bg-input md:py-20 py-10'>
+      <Styles className='portfolio font-raleway text-gray-100  bg-input md:py-20 py-10'>
         <h1 className='text-center uppercase md:text-3xl text-xl font-semibold tracking-widest mb-3'>
           Projects
         </h1>
@@ -51,7 +51,7 @@ const Portfolio = () => {
           {data.map((project) => {
             const { id, images, name, slug, skills, title } = project;
             return (
-              <div className='project col-span-1 relative ' key={id}>
+              <div key={id} className='project col-span-1 relative '>
                 <img src={images[0].url} alt={name} />
                 <div className='bg-secondary opacity-80 overlay absolute shadow-lg top-0 right-0 left-0 bottom-0 p-5 transition duration-500 ease-in-out  transform hover:-translate-y-1 hover:scale-105'>
                   <div className='space-y-10'>
