@@ -11,7 +11,7 @@ const ProjectDetail = ({ setShowProject, projectDetail, loading }) => {
 
   return (
     <Styles onClick={() => setShowProject(false)}>
-      <div className='flex justify-center items-center inset-0 justify-items-center max-w-3xl mx-auto'>
+      <div className='flex justify-center items-center inset-0 justify-items-center max-w-3xl mx-auto z-30'>
         <div className=' bg-white w-full mt-24 text-gray-200'>
           <img className='border-b-2 border-primary_1' src={images[0].url} alt={title} />
           <div className='px-5 pt-6 mb-10'>

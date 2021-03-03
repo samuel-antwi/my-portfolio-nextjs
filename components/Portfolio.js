@@ -6,6 +6,7 @@ import { GET_ALL_PROJECTS, GET_PROJECT } from '../graphql/queries';
 import ProjectDetail from './ProjectDetail';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Project from './Project';
 
 const Portfolio = () => {
   const controls = useAnimation();
@@ -41,7 +42,7 @@ const Portfolio = () => {
 
   return (
     <>
-      <Styles className='portfolio text-gray-100  bg-primary md:py-20 py-10'>
+      <Styles className='portfolio text-gray-100  bg-input md:py-20 py-10'>
         <h1 className='text-center uppercase md:text-3xl font-semibold tracking-widest mb-3'>
           Projects
         </h1>
@@ -77,7 +78,7 @@ const Portfolio = () => {
                   </div>
                 </div>
                 {showProject && (
-                  <ProjectDetail
+                  <Project
                     loading={loading}
                     setShowProject={setShowProject}
                     project={project}
