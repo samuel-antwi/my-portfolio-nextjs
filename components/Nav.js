@@ -7,7 +7,7 @@ const Nav = () => {
   const [isOpen, setOpen] = useState(false);
   return (
     <>
-      <div className='sticky top-0 bottom-0  bg-nav text-gray-200 p-4  border-b-4 border-secondary z-20 '>
+      <div className='sticky top-0 bottom-0  bg-nav text-gray-200 p-4  border-b-4 border-secondary z-10 '>
         <div className='hidden md:block'>
           <div className='flex items-center space-x-6  max-w-5xl mx-auto'>
             <Links link='home'>home</Links>

@@ -9,7 +9,7 @@ const Background = () => {
         position: 'relative',
         width: '100%',
         minHeight: '100vh',
-        background: '#252a35',
+        background: '#1e252c',
       }}>
       <Particles params={particlesconfig} />
     </div>

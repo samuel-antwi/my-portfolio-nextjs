@@ -73,6 +73,7 @@ const Home = () => {
       <About />
       <Portfolio />
       <Contact />
+      <hr />
     </Layout>
   );
 };

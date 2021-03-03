@@ -1,7 +1,14 @@
 import { useForm, ValidationError } from '@formspree/react';
+import { useState, useEffect } from 'react';
 
 const Contact = () => {
   const [state, handleSubmit] = useForm('contactForm');
+  const [characters, setCharacters] = useState('');
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    setCharacters(3000 - message.length);
+  }, [message]);
 
   if (state.succeeded) {
     return <div>Thank you for contacting me. I will be intouch very soon!</div>;
@@ -40,17 +47,19 @@ const Contact = () => {
             </div>
             <div>
               <textarea
+                vocab={message}
+                onChange={(e) => setMessage(e.target.value)}
                 className='w-full p-2 bg-input'
                 placeholder='Your message'
                 name='Message'
-                id=''
                 cols='30'
                 rows='10'></textarea>
               <span className='text-red-200 text-xs'>
                 <ValidationError prefix='Message' field='Message' errors={state.errors} />
               </span>
             </div>
-            <div className='flex justify-end '>
+            <div className='flex justify-between '>
+              <p className='text-gray-400'>{characters} / 3000</p>
               <button
                 disabled={state.submitting}
                 className='border-2 px-6 tracking-wider hover:bg-secondary hover:border-secondary uppercase py-2 transition duration-500 ease-in-out'>
