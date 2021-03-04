@@ -47,11 +47,11 @@ const Portfolio = () => {
           Projects
         </h1>
         <div className='h-1 bg-gray-200 w-16 flex max-w-xs mx-auto md:mb-20 mb-10'></div>
-        <div className='md:grid grid-cols-3 max-w-6xl mx-auto gap-5 '>
+        <div className='md:grid lg:grid-cols-3 md:grid-cols-2 max-w-6xl mx-auto gap-5 md:px-8'>
           {data.map((project) => {
             const { id, images, name, slug, skills, title } = project;
             return (
-              <div key={id} className='project col-span-1 relative '>
+              <div key={id} className='project col-span-1 relative'>
                 <img src={images[0].url} alt={name} />
                 <div className='bg-secondary opacity-80 overlay absolute shadow-lg top-0 right-0 left-0 bottom-0 p-5 transition duration-500 ease-in-out  transform hover:-translate-y-1 hover:scale-105'>
                   <div className='space-y-10'>
