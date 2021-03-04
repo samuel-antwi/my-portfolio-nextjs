@@ -31,7 +31,7 @@ const Home = () => {
           <div className='flex justify-center items-center justify-items-center inset-0 min-h-screen'>
             <div className='md:text-4xl xs:text-2xl text-lg text-center'>
               {typewriter && (
-                <div className='text-gray-400 font-futura'>
+                <div className='text-gray-400 md:text-4xl font-futura'>
                   <Typewriter
                     options={{
                       strings: [' Thank you for visiting my portfolio..'],
@@ -43,10 +43,10 @@ const Home = () => {
               )}
               {show && (
                 <motion.div initial={{ y: -500 }} animate={{ y: 0 }} transition={{ duration: 0.8 }}>
-                  <h3 className='mb-1'>
+                  <h3 className='mb-1 md:text-4xl'>
                     Hello, I'm <span className='text-primary capitalize'>samuel antwi.</span>
                   </h3>
-                  <h3 className='mb-5'>I'm a Front-end developer.</h3>
+                  <h3 className='mb-5 md:text-4xl'>I'm a Front-end developer.</h3>
                   <Styles>
                     <Link
                       to='about'
