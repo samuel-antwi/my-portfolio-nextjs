@@ -49,9 +49,9 @@ const About = () => {
           description="Websites don't have to be static. My goal is to make pages come to life."
         />
       </section>
-      <section className='md:grid grid-cols-4 gap-10 max-w-4xl mx-auto'>
+      <section className='lg:grid grid-cols-4 lg:px-0 xs:px-8 px-4 lg:gap-10 gap-5 max-w-4xl mx-auto'>
         <motion.div
-          className='col-span-2'
+          className='col-span-2 '
           ref={ref}
           animate={controls}
           initial='hidden'
@@ -63,18 +63,13 @@ const About = () => {
           <Image
             className='object-cover'
             src={'/images/sam5.png'}
-            width={800}
-            height={980}
+            width={600}
+            height={750}
             priority
+            layout='responsive'
           />
-          <Link
-            to='contact'
-            className='cursor-pointer flex items-center  px-8 md:px-0 text-blue-400 hover:underline pt-1 text-lg tracking-wider mb-10'>
-            Let work together
-            <FaHandsHelping className='ml-2' />
-          </Link>
         </motion.div>
-        <div data-aos='fade-in' className='col-span-2 xs:px-8 px-4 md:px-0'>
+        <div data-aos='fade-in' className='col-span-2 '>
           <h1 className='md:text-2xl text-lg tracking-wider  font-semibold text-secondary py-4'>
             Who am I?
           </h1>
@@ -104,6 +99,12 @@ const About = () => {
               <Skill skill='Jira' />
               <Skill skill='Agile' />
             </div>
+            <Link
+              to='contact'
+              className='cursor-pointer flex items-center pt-3   text-blue-400 hover:underline text-sm  xs:text-lg tracking-wider mb-10'>
+              Let work together
+              <FaHandsHelping className='ml-2' />
+            </Link>
           </div>
         </div>
       </section>
