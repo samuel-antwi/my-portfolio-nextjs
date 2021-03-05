@@ -17,7 +17,7 @@ const Contact = () => {
   return (
     <div className='contact font-raleway bg-contact text-gray-100  py-20'>
       <div className='max-w-xl mx-auto xs:px-6 px-4'>
-        <div>
+        <div data-aos='slide-right' data-aos-duration='1000'>
           <h1 className='text-center uppercase md:text-3xl text-xl font-semibold tracking-widest mb-3'>
             Contact
           </h1>
@@ -28,37 +28,39 @@ const Contact = () => {
         </p>
         <div>
           <form onSubmit={handleSubmit} className='space-y-1 mb-10 text-gray-300'>
-            <div>
-              <input className='w-full p-2 bg-input' placeholder='Name' type='text' name='Name' />
-              <span className='text-red-200 text-xs'>
-                <ValidationError prefix='Name' field='Name' errors={state.errors} />
-              </span>
+            <div data-aos='slide-left' data-aos-duration='2000'>
+              <div>
+                <input className='w-full p-2 bg-input' placeholder='Name' type='text' name='Name' />
+                <span className='text-red-200 text-xs'>
+                  <ValidationError prefix='Name' field='Name' errors={state.errors} />
+                </span>
+              </div>
+              <div>
+                <input
+                  className='w-full p-2 bg-input'
+                  placeholder='Enter email'
+                  type='text'
+                  name='Email'
+                />
+                <span className='text-red-200 text-xs'>
+                  <ValidationError prefix='Message' field='Message' errors={state.errors} />
+                </span>
+              </div>
+              <div>
+                <textarea
+                  vocab={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className='w-full p-2 bg-input'
+                  placeholder='Your message'
+                  name='Message'
+                  cols='30'
+                  rows='10'></textarea>
+                <span className='text-red-200 text-xs'>
+                  <ValidationError prefix='Message' field='Message' errors={state.errors} />
+                </span>
+              </div>
             </div>
-            <div>
-              <input
-                className='w-full p-2 bg-input'
-                placeholder='Enter email'
-                type='text'
-                name='Email'
-              />
-              <span className='text-red-200 text-xs'>
-                <ValidationError prefix='Message' field='Message' errors={state.errors} />
-              </span>
-            </div>
-            <div>
-              <textarea
-                vocab={message}
-                onChange={(e) => setMessage(e.target.value)}
-                className='w-full p-2 bg-input'
-                placeholder='Your message'
-                name='Message'
-                cols='30'
-                rows='10'></textarea>
-              <span className='text-red-200 text-xs'>
-                <ValidationError prefix='Message' field='Message' errors={state.errors} />
-              </span>
-            </div>
-            <div className='flex justify-between '>
+            <div data-aos='slide-right' data-aos-duration='2000' className='flex justify-between '>
               <p className='text-gray-400 text-sm'>{characters} / 3000</p>
               <button
                 disabled={state.submitting}

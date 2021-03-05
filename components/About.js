@@ -50,16 +50,7 @@ const About = () => {
         />
       </section>
       <section className='lg:grid grid-cols-4 lg:px-0 xs:px-8 px-4 lg:gap-10 gap-5 max-w-4xl mx-auto'>
-        <motion.div
-          className='col-span-2 '
-          ref={ref}
-          animate={controls}
-          initial='hidden'
-          transition={{ duration: 0.8 }}
-          variants={{
-            visible: { opacity: 1, scale: 1 },
-            hidden: { opacity: 0, scale: 0 },
-          }}>
+        <div data-aos='slide-right' data-aos-duration='1000' className='col-span-2'>
           <Image
             className='object-cover'
             src={'/images/sam5.png'}
@@ -68,8 +59,8 @@ const About = () => {
             priority
             layout='responsive'
           />
-        </motion.div>
-        <div data-aos='fade-in' className='col-span-2 '>
+        </div>
+        <div data-aos='slide-left' data-aos-duration='1000' className='col-span-2 '>
           <h1 className='md:text-2xl text-lg tracking-wider  font-semibold text-secondary py-4'>
             Who am I?
           </h1>
@@ -140,3 +131,12 @@ const SkillsGrid = ({ title, description, icon }) => {
 };
 
 export const Styles = styled.div``;
+
+// ref={ref}
+//           animate={controls}
+//           initial='hidden'
+//           transition={{ duration: 0.8 }}
+//           variants={{
+//             visible: { opacity: 1, scale: 1 },
+//             hidden: { opacity: 0, scale: 0 },
+//           }}
