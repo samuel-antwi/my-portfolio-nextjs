@@ -1,12 +1,14 @@
 import { BsChevronDoubleUp } from 'react-icons/bs';
 import { FaLinkedinIn, FaTwitter, FaInstagram, FaGithub } from 'react-icons/fa';
 import { Link } from 'react-scroll';
+import styled from 'styled-components';
+
 const Footer = () => {
   const getYear = new Date().getFullYear();
   return (
     <div className='bg-input p-5'>
       <Link to='home' className=' flex justify-center items-center justify-items-center'>
-        <button className=' p-2 bg-primary_1  -mt-12'>
+        <button aria-label='scroll to top' className=' p-2 bg-primary_1  -mt-12'>
           <BsChevronDoubleUp size={30} className='' />
         </button>
       </Link>
@@ -33,7 +35,7 @@ export const SocialLinks = ({ link, icon }) => {
       href={link}
       target='_blank '
       rel='noreferrer noopener'
-      className='bg-primary xs:p-4 p-2 hover:bg-secondary transition ease-in-out duration-300 transform hover:-translate-y-1 hover:scale-110'>
+      className=' bg-primary xs:p-4 p-2 hover:bg-secondary transition ease-in-out duration-300 transform hover:-translate-y-1 hover:scale-110'>
       {icon}
     </a>
   );
