@@ -63,6 +63,7 @@ const Contact = () => {
             <div data-aos='slide-right' data-aos-duration='2000' className='flex justify-between '>
               <p className='text-gray-400 text-sm'>{characters} / 3000</p>
               <button
+                aria-label='Submit'
                 disabled={state.submitting}
                 className='border-2 text-sm tracking-wider hover:bg-secondary hover:border-secondary uppercase xs:py-2 py-1 px-3  xs:px-6 transition duration-500 ease-in-out'>
                 {state.submitting ? ' Submiting' : 'Submit'}

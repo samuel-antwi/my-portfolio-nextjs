@@ -21,7 +21,7 @@ const About = () => {
 
   return (
     <Styles className='about font-raleway min-h-screen bg-primary py-20 text-gray-200'>
-      <div className='pb-20'>
+      <div data-aos='slide-right' data-aos-duration='1000' className='pb-20'>
         <h1 className='text-center uppercase md:text-3xl text-xl font-semibold tracking-widest mb-3'>
           About
         </h1>
@@ -58,6 +58,7 @@ const About = () => {
             height={750}
             priority
             layout='responsive'
+            alt='Samuel Antwi'
           />
         </div>
         <div data-aos='slide-left' data-aos-duration='1000' className='col-span-2 '>
