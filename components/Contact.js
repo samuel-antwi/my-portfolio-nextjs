@@ -27,8 +27,8 @@ const Contact = () => {
           Have a question or want to work together?
         </p>
         <div>
-          <form onSubmit={handleSubmit} className='space-y-1 mb-10 text-gray-300'>
-            <div data-aos='slide-left' data-aos-duration='2000'>
+          <form onSubmit={handleSubmit} className=' mb-10 text-gray-300'>
+            <div className='space-y-2' data-aos='slide-left' data-aos-duration='2000'>
               <div>
                 <input className='w-full p-2 bg-input' placeholder='Name' type='text' name='Name' />
                 <span className='text-red-200 text-xs'>

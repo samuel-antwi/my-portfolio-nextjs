@@ -1,17 +1,20 @@
 import { BsChevronDoubleUp } from 'react-icons/bs';
 import { FaLinkedinIn, FaTwitter, FaInstagram, FaGithub } from 'react-icons/fa';
-import { Link } from 'react-scroll';
-import styled from 'styled-components';
 
 const Footer = () => {
   const getYear = new Date().getFullYear();
   return (
     <div className='bg-input p-5'>
-      <Link to='home' className=' flex justify-center items-center justify-items-center'>
-        <button aria-label='scroll to top' className=' p-2 bg-primary_1  -mt-12'>
+      <div className=' flex justify-center items-center justify-items-center '></div>
+      <div className=' flex justify-center items-center justify-items-center '>
+        <button
+          type='button'
+          onClick={() => window.scrollTo(0, 0)}
+          aria-label='scroll to top'
+          className=' p-2 bg-primary_1  -mt-12'>
           <BsChevronDoubleUp size={30} className='' />
         </button>
-      </Link>
+      </div>
       <div className='text-2xl flex items-center justify-items-center justify-center  space-x-6 py-10'>
         <SocialLinks link='https://www.linkedin.com/in/samuel-antwi/' icon={<FaLinkedinIn />} />
         <SocialLinks link='https://www.instagram.com/i_am_samuelantwi/' icon={<FaInstagram />} />
