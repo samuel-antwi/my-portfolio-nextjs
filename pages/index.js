@@ -25,8 +25,8 @@ const Home = () => {
 
   return (
     <Layout
-      title="Samuel Antwi's Portfolio"
-      description='Hello, welcome to my portfolio. My name is Samuel Antwi, a front-end developer.'>
+      title='Samuel Antwi | Portfolio'
+      description='Hello, welcome to my portfolio. My name is Samuel Antwi. I am a  front-end developer.'>
       <Background />
       <div className='home  text-gray-50  font-raleway absolute top-0 right-0 left-0 bottom-0'>
         <div className='container mx-auto '>
