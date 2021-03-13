@@ -6,7 +6,7 @@ const Layout = ({ children, title, description }) => {
   return (
     <div className='font-futura  text-gray-50 '>
       <Head>
-        {/* <meta name='viewport' content='width=device-width, initial-scale=1' /> */}
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta charSet='utf-8' />
         <meta property='og:title' content={title} key='ogtitle' />
         <meta property='og:description' content={description} key='ogdescription' />
