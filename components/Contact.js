@@ -7,7 +7,7 @@ const Contact = () => {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    setCharacters(3000 - message.length);
+    setCharacters(500 - message.length);
   }, [message]);
 
   if (state.succeeded) {
@@ -43,7 +43,7 @@ const Contact = () => {
                   name='Email'
                 />
                 <span className='text-red-200 text-xs'>
-                  <ValidationError prefix='Message' field='Message' errors={state.errors} />
+                  <ValidationError prefix='Email' field='Email' errors={state.errors} />
                 </span>
               </div>
               <div>
@@ -61,7 +61,7 @@ const Contact = () => {
               </div>
             </div>
             <div data-aos='slide-right' data-aos-duration='2000' className='flex justify-between '>
-              <p className='text-gray-400 text-sm'>{characters} / 3000</p>
+              <p className='text-gray-400 text-sm'>{characters} / 500</p>
               <button
                 aria-label='Submit'
                 disabled={state.submitting}
