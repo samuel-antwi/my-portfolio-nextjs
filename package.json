@@ -22,6 +22,7 @@
     "react-query": "^3.12.0",
     "react-responsive-modal": "^6.0.1",
     "react-scroll": "^1.8.1",
+    "react-scroll-progress-bar": "^1.1.13",
     "react-tsparticles": "^1.18.12",
     "styled-components": "^5.2.1",
     "typewriter-effect": "^2.17.0"
