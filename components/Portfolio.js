@@ -3,14 +3,9 @@ import { useQuery } from 'react-query';
 import styled from 'styled-components';
 import graphcms from '../graphql/client';
 import { GET_ALL_PROJECTS, GET_PROJECT } from '../graphql/queries';
-import ProjectDetail from './ProjectDetail';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import Project from './Project';
 
 const Portfolio = () => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
   const [loading, setLoading] = useState(false);
   const [projectSlug, setProjectSlug] = useState('');
   const [projectDetail, setProjectDetail] = useState({});
@@ -20,16 +15,12 @@ const Portfolio = () => {
     return projects;
   });
 
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
-  }, [controls, inView]);
-
+  // Fetch project by slug whenever projectSlug changes
   useEffect(() => {
     fetchProject();
   }, [projectSlug]);
 
+  // Fetch project by slug
   const fetchProject = async () => {
     setLoading(true);
     const { project } = await graphcms.request(GET_PROJECT, { slug: projectSlug });
@@ -53,12 +44,12 @@ const Portfolio = () => {
           {data.map((project) => {
             const { id, images, name, slug, skills, title } = project;
             return (
-              <div key={id} className='project col-span-1 relative'>
+              <div key={id} className='wrapper project col-span-1 relative'>
                 <img src={images[0].url} alt={name} alt='Project name' />
-                <div className='bg-secondary opacity-80 overlay absolute shadow-lg top-0 right-0 left-0 bottom-0 p-5 transition duration-500 ease-in-out  transform hover:-translate-y-1 hover:scale-105'>
+                <div className='overlay bg-secondary opacity-80 overlay shadow-lg flex flex-col justify-items-center items-center justify-center '>
                   <div className='space-y-10'>
                     <div className=''>
-                      <h2 className='text-center mb-1 text-xl font-semibold tracking-wider text-gray-700'>
+                      <h2 className='text-center mb-1 text-xl font-semibold tracking-wider text-black uppercase'>
                         {title}
                       </h2>
                       <div className='flex justify-center space-x-2'>
@@ -102,9 +93,15 @@ export default Portfolio;
 
 const Styles = styled.div`
   .overlay {
-    display: none;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s ease;
   }
-  .project:hover .overlay {
-    display: block;
+
+  .wrapper:hover .overlay {
+    height: 100%;
   }
 `;
