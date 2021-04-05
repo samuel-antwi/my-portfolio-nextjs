@@ -11,6 +11,7 @@ const client = new QueryClient();
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     AOS.init({
+      once: true,
       disable: function () {
         const maxWidth = 800;
         return window.innerWidth < maxWidth;

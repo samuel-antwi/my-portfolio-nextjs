@@ -31,7 +31,7 @@ const About = () => {
         <SkillsGrid
           icon={<FaLaptop size={50} />}
           title='Responsive'
-          description=" We are not in 90's. Don't pay extra for responsive website."
+          description=' Mobile first approach always in mind when building.'
         />
         <SkillsGrid
           icon={<ImAlarm size={50} />}
@@ -46,37 +46,39 @@ const About = () => {
         <SkillsGrid
           icon={<ImRocket size={50} />}
           title='Dynamic'
-          description="Websites don't have to be static. My goal is to make pages come to life."
+          description="Websites don't have to be static. I make pages come to life."
         />
       </section>
-      <section className='lg:grid grid-cols-4 lg:px-0 xs:px-8 px-4 lg:gap-10 gap-5 max-w-4xl mx-auto'>
+      <section className='max-w-5xl mx-auto lg:grid grid-cols-5 lg:px-0 xs:px-8 px-4 lg:gap-10 gap-5 '>
         <div data-aos='slide-right' data-aos-duration='1000' className='col-span-2'>
           <Image
             className='object-cover'
             src={'/images/sam5.png'}
             width={600}
             height={750}
-            priority
-            layout='responsive'
+            priority={true}
+            loading='eager'
             alt='Samuel Antwi'
           />
         </div>
-        <div data-aos='slide-left' data-aos-duration='1000' className='col-span-2 '>
+        <div data-aos='slide-left' data-aos-duration='1000' className='col-span-3 '>
           <h1 className='md:text-2xl text-lg tracking-wider  font-semibold text-secondary py-4'>
             Who am I?
           </h1>
           <div className='xs:text-lg text-sm text-gray-300  mb-1  tracking-wide font-raleway'>
             <p>
-              I'm a Front-End Developer based in Mansfield, Nottinghamshire. My goal is to use
-              mordern stacks to build amazing web application that can have real positive impact in
-              people's life without compromising their experience.
+              My name is Samuel Antwi. I'm a{' '}
+              <span className='text-primary'>Front-End Developer</span> based in Mansfield,
+              Nottinghamshire. My goal is to use mordern stacks to build amazing web application
+              that can have real positive impact in people's life without compromising their
+              experience.
             </p>
             <p>
-              I have a genuine passion for tech and I always do my best to keep up with the latest
-              technologies and tools that help frontend developers to build a fully-fledged web
-              application.
+              I have a genuine passion for tech in general and React as a Javasript framework. I
+              always do my best to keep up with the latest technologies and tools that help frontend
+              developers build fully-fledged web applications.
             </p>
-            <p>If I am not writing code, it means I am busy DJing. 💿 🎵</p>
+            <p>If I am not writing or debugging code, then I'm busy DJing. 💿 🎵</p>
             <div className='flex flex-wrap pt-3 '>
               <Skill skill='HTML' />
               <Skill skill='CSS' />
@@ -93,7 +95,7 @@ const About = () => {
             </div>
             <Link
               to='contact'
-              className='cursor-pointer flex items-center pt-3   text-blue-400 hover:underline text-sm  xs:text-lg tracking-wider mb-10'>
+              className='cursor-pointer flex items-center pt-10   text-blue-400 hover:underline text-sm  xs:text-lg tracking-wider mb-10'>
               Let work together
               <FaHandsHelping className='ml-2' />
             </Link>
@@ -132,12 +134,3 @@ const SkillsGrid = ({ title, description, icon }) => {
 };
 
 export const Styles = styled.div``;
-
-// ref={ref}
-//           animate={controls}
-//           initial='hidden'
-//           transition={{ duration: 0.8 }}
-//           variants={{
-//             visible: { opacity: 1, scale: 1 },
-//             hidden: { opacity: 0, scale: 0 },
-//           }}
