@@ -54,7 +54,7 @@ const Portfolio = () => {
                       </h2>
                       <div className='flex justify-center space-x-2'>
                         {skills.map((skill, index) => (
-                          <p className='text-base text-white' key={index}>
+                          <p className='text-base text-primary' key={index}>
                             {skill}
                           </p>
                         ))}

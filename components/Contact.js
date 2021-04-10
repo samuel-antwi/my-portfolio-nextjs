@@ -1,18 +1,23 @@
 import { useForm, ValidationError } from '@formspree/react';
 import { useState, useEffect } from 'react';
-
+import { useSnackbar } from 'react-simple-snackbar';
+import { useRouter } from 'next/router';
 const Contact = () => {
+  const [openSnackbar] = useSnackbar();
   const [state, handleSubmit] = useForm('contactForm');
   const [characters, setCharacters] = useState('');
   const [message, setMessage] = useState('');
+  const [isSent] = useState(true);
+
+  const router = useRouter();
 
   useEffect(() => {
     setCharacters(500 - message.length);
   }, [message]);
 
-  if (state.succeeded) {
-    return <div>Thank you for contacting me. I will be intouch very soon!</div>;
-  }
+  useEffect(() => {
+    if (state.succeeded) return router.push('/thankyou');
+  }, [state]);
 
   return (
     <div className='contact font-raleway bg-contact text-gray-100  py-20'>
@@ -63,6 +68,7 @@ const Contact = () => {
             <div data-aos='slide-right' data-aos-duration='2000' className='flex justify-between '>
               <p className='text-gray-400 text-sm'>{characters} / 500</p>
               <button
+                type='submit'
                 aria-label='Submit'
                 disabled={state.submitting}
                 className='border-2 text-sm tracking-wider hover:bg-secondary hover:border-secondary uppercase xs:py-2 py-1 px-3  xs:px-6 transition duration-500 ease-in-out'>

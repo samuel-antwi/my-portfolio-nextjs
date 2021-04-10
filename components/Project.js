@@ -1,8 +1,6 @@
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { MdClose } from 'react-icons/md';
-import { FaGithub } from 'react-icons/fa';
 
 const Project = ({ setShowProject, projectDetail, loading }) => {
   if (!projectDetail) return null;
