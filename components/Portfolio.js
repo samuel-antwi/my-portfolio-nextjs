@@ -19,7 +19,7 @@ const Portfolio = ({ projects }) => {
                 <img src={images[0].url} alt={name} alt='Project name' />
                 <div className='overlay bg-secondary opacity-80 overlay shadow-lg flex flex-col justify-items-center items-center justify-center '>
                   <div className='space-y-10'>
-                    <div className=''>
+                    <div className='mb-10'>
                       <h2 className='text-center mb-1 text-xl font-semibold tracking-wider text-black uppercase'>
                         {title}
                       </h2>
