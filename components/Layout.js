@@ -6,6 +6,7 @@ import ProgressBar from 'react-scroll-progress-bar';
 const Layout = ({ children, title, description }) => {
   return (
     <div className='font-futura  text-gray-50 '>
+      <Nav />
       <ProgressBar bgcolor='#e31c6d' />
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />

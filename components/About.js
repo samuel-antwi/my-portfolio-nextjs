@@ -50,52 +50,62 @@ const About = () => {
         />
       </section>
       <section className='max-w-5xl mx-auto lg:grid grid-cols-5 lg:px-0 xs:px-8 px-4 lg:gap-10 gap-5 '>
-        <div data-aos='slide-right' data-aos-duration='1000' className='col-span-2'>
+        <div data-aos='slide-right' data-aos-duration='1000' className='col-span-2 mb-5'>
           <Image
             className='object-cover'
             src={'/images/sam5.png'}
             width={600}
-            height={750}
+            height={870}
             priority={true}
             loading='eager'
             alt='Samuel Antwi'
           />
         </div>
         <div data-aos='slide-left' data-aos-duration='1000' className='col-span-3 '>
-          <h1 className='md:text-2xl text-lg tracking-wider  font-semibold text-secondary py-4'>
+          <h1 className='md:text-xl text-lg tracking-wider  font-semibold text-secondary'>
             Who am I?
           </h1>
           <div className='xs:text-lg text-sm text-gray-300  mb-1  tracking-wide font-raleway'>
             <p>
-              My name is Samuel Antwi. I'm a{' '}
+              My name is Samuel Antwi. I'm a {''}
               <span className='text-primary'>Front-End Developer</span> based in Mansfield,
-              Nottinghamshire. My goal is to use mordern stacks to build amazing web application
-              that can have real positive impact in people's life without compromising their
-              experience.
+              Nottinghamshire.
             </p>
             <p>
-              I have a genuine passion for tech in general and React as a Javasript framework. I
-              always do my best to keep up with the latest technologies and tools that help frontend
-              developers build fully-fledged web applications.
+              I have a genuine passion for tech in general and React as a Javascript framework. I
+              take interest in keeping up with the latest technologies and tools that help frontend
+              developers build fully-fledged and high performant web applications.
             </p>
             <p>If I am not writing or debugging code, then I'm busy DJing. 💿 🎵</p>
-            <div className='flex flex-wrap pt-3 '>
-              <Skill skill='HTML' />
-              <Skill skill='CSS' />
+            <div className='pt-4'>
+              <h1 className='md:text-xl text-lg tracking-wider font-semibold text-secondary'>
+                Portfolio
+              </h1>
+              <p>
+                This Portfolio was built with Next.js and a Headless CMS for the backend. The
+                Components were styled with Styled-components and Tailwind CSS.
+              </p>
+            </div>
+            <h1 className='md:text-xl text-lg tracking-wider font-semibold text-secondary pt-4'>
+              Professional Skills
+            </h1>
+            <div className='flex flex-wrap'>
+              <Skill skill='HTML5' />
+              <Skill skill='CSS3' />
               <Skill skill='JavaScript' />
-              <Skill skill='Recat/NextJS' />
-              <Skill skill='Headless CMS' />
+              <Skill skill='React/NextJS' />
+              <Skill skill='React/Redux' />
+              <Skill skill='React-Query' />
+              <Skill skill='Headless CMS (Graphcms)' />
               <Skill skill='Firebase' />
-              <Skill skill='REST' />
-              <Skill skill='GraphQL' />
               <Skill skill='Responsive design' />
-              <Skill skill='Git' />
+              <Skill skill='Git (Github, Bitbucket)' />
               <Skill skill='Jira' />
               <Skill skill='Agile' />
             </div>
             <Link
               to='contact'
-              className='cursor-pointer flex items-center pt-10   text-blue-400 hover:underline text-sm  xs:text-lg tracking-wider mb-10'>
+              className='cursor-pointer flex items-center pt-5 text-blue-400 hover:underline text-sm  xs:text-lg tracking-wider mb-10'>
               Let work together
               <FaHandsHelping className='ml-2' />
             </Link>

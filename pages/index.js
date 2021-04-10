@@ -55,9 +55,13 @@ const Home = () => {
                       className='mr-1 md:text-lg text-base '
                       onMouseOver={() => setArrow(true)}
                       onMouseLeave={() => setArrow(false)}
-                      className=' flex items-center justify-center xs:text-base text-sm justify-items-center xs:w-48 w-40 mx-auto  border-2 p-2   text-white capitalize '>
+                      className=' flex items-center justify-center xs:text-base text-sm justify-items-center xs:w-48 w-40 mx-auto border-2 p-2 border-secondary   text-white capitalize '>
                       View my work
-                      {showDownArrow ? <BsArrowDown /> : <BsArrowRight />}
+                      {showDownArrow ? (
+                        <BsArrowDown className='ml-3' />
+                      ) : (
+                        <BsArrowRight className='ml-3' />
+                      )}
                     </Link>
                   </Styles>
                 </motion.div>
@@ -66,7 +70,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Nav />
+      {/* <Nav /> */}
       <About />
       <Portfolio />
       <Contact />
