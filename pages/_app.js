@@ -6,6 +6,7 @@ import AOS from 'aos';
 import { useEffect } from 'react';
 import { FormspreeProvider } from '@formspree/react';
 import SnackbarProvider from 'react-simple-snackbar';
+import { StateProvider } from '../context/stateProvider';
 
 const client = new QueryClient();
 
@@ -21,11 +22,13 @@ function MyApp({ Component, pageProps }) {
   });
   return (
     <QueryClientProvider client={client}>
-      <SnackbarProvider>
-        <FormspreeProvider project={process.env.NEXT_PUBLIC_FORMSPREE_ID}>
-          <Component {...pageProps} />
-        </FormspreeProvider>
-      </SnackbarProvider>
+      <StateProvider>
+        <SnackbarProvider>
+          <FormspreeProvider project={process.env.NEXT_PUBLIC_FORMSPREE_ID}>
+            <Component {...pageProps} />
+          </FormspreeProvider>
+        </SnackbarProvider>
+      </StateProvider>
     </QueryClientProvider>
   );
 }

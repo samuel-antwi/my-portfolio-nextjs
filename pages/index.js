@@ -1,7 +1,6 @@
 import Layout from '../components/Layout';
 import { BsArrowDown, BsArrowRight } from 'react-icons/bs';
 import { useEffect, useState } from 'react';
-import Nav from '../components/Nav';
 import About from '../components/About';
 import Portfolio from '../components/Portfolio';
 import styled from 'styled-components';
@@ -10,8 +9,10 @@ import { Link } from 'react-scroll';
 import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
 import Background from '../components/Background';
+import graphcms from '../graphql/client';
+import { GET_ALL_PROJECTS } from '../graphql/queries';
 
-const Home = () => {
+const Home = ({ projects }) => {
   const [showDownArrow, setArrow] = useState(false);
   const [show, setShow] = useState(false);
   const [typewriter, setTypewriter] = useState(true);
@@ -70,9 +71,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* <Nav /> */}
       <About />
-      <Portfolio />
+      <Portfolio projects={projects} />
       <Contact />
       <hr />
     </Layout>
@@ -80,6 +80,16 @@ const Home = () => {
 };
 
 export default Home;
+
+export const getStaticProps = async () => {
+  const { projects } = await graphcms.request(GET_ALL_PROJECTS);
+
+  return {
+    props: {
+      projects,
+    },
+  };
+};
 
 const Styles = styled.div`
   a {

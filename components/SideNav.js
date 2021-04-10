@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import { GrClose } from 'react-icons/gr';
 import { Link } from 'react-scroll';
 
