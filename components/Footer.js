@@ -1,5 +1,6 @@
 import { BsChevronDoubleUp } from 'react-icons/bs';
 import { FaLinkedinIn, FaTwitter, FaInstagram, FaGithub } from 'react-icons/fa';
+import styled from 'styled-components';
 
 const Footer = () => {
   const getYear = new Date().getFullYear();

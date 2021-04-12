@@ -1,13 +1,11 @@
 import { useForm, ValidationError } from '@formspree/react';
 import { useState, useEffect } from 'react';
-import { useSnackbar } from 'react-simple-snackbar';
 import { useRouter } from 'next/router';
+
 const Contact = () => {
-  const [openSnackbar] = useSnackbar();
   const [state, handleSubmit] = useForm('contactForm');
   const [characters, setCharacters] = useState('');
   const [message, setMessage] = useState('');
-  const [isSent] = useState(true);
 
   const router = useRouter();
 
