@@ -12,7 +12,7 @@ const Project = ({ project }) => {
 
   return (
     <Styles>
-      <div className='font-raleway text-gray-100'>
+      <div className='font-raleway text-gray-100 overflow-x-hidden'>
         <button
           aria-label='close'
           onClick={() => router.back('/')}
@@ -21,7 +21,10 @@ const Project = ({ project }) => {
         </button>
         <div className='flex min-h-screen'>
           <div className='max-w-6xl m-auto'>
-            <h1 className='animate-bounce md:mb-28 md:pt-5 pt-20 text-2xl uppercase md:text-4xl font text-gray-300 text-center'>
+            <h1
+              className='title md:mb-28 mb-10 md:pt-5 pt-20 text-2xl uppercase md:text-4xl font text-gray-300 text-center'
+              // className='animate-bounce md:mb-28 md:pt-5 pt-20 text-2xl uppercase md:text-4xl font text-gray-300 text-center'
+            >
               {title}
             </h1>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 bg-primary'>
@@ -178,6 +181,6 @@ const Styles = styled.div`
   }
 
   .title {
-    animation: bounce infinite 2s linear;
+    animation: bounce infinite 1s linear;
   }
 `;
