@@ -22,7 +22,7 @@ const Project = ({ project }) => {
         <div className='flex min-h-screen'>
           <div className='max-w-6xl m-auto'>
             <h1
-              className=' md:mb-28 md:pt-5 pt-20 text-2xl uppercase md:text-4xl font text-gray-300 text-center'
+              className='title md:mb-28 mb-10 md:pt-5 pt-20 text-2xl uppercase md:text-4xl font text-gray-300 text-center'
               // className='animate-bounce md:mb-28 md:pt-5 pt-20 text-2xl uppercase md:text-4xl font text-gray-300 text-center'
             >
               {title}
@@ -178,5 +178,9 @@ const Styles = styled.div`
   }
   .project__links a:hover {
     background-position: left bottom;
+  }
+
+  .title {
+    animation: bounce infinite 1s linear;
   }
 `;
