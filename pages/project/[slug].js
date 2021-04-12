@@ -11,19 +11,20 @@ const Project = ({ project }) => {
   const router = useRouter();
 
   return (
-    <Styles className='bg-black'>
-      <div className='font-raleway pt-10 text-gray-100'>
+    <Styles>
+      <div className='font-raleway text-gray-100'>
         <button
+          aria-label='close'
           onClick={() => router.back('/')}
-          className='absolute top-5 right-5 text-gray-400 md:text-5xl text-2xl'>
+          className='absolute top-5 right-5 z-20  text-gray-400 md:text-5xl text-3xl'>
           <MdClose />
         </button>
         <div className='flex min-h-screen'>
           <div className='max-w-6xl m-auto'>
-            <h1 className='animate-bounce md:mb-20 text-2xl md:text-6xl font text-gray-300 mb-10 text-center'>
+            <h1 className='animate-bounce md:mb-28 md:pt-5 pt-20 text-2xl uppercase md:text-4xl font text-gray-300 text-center'>
               {title}
             </h1>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 bg-primary p-6'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 bg-primary'>
               <motion.div
                 initial={{ x: '-100vw' }}
                 animate={{ x: 0 }}
@@ -36,36 +37,40 @@ const Project = ({ project }) => {
                 animate={{ x: 0 }}
                 transition={{ duration: 1 }}
                 className='col-span-1 '>
-                <p className='text-md mb-8 font-raleway tracking-wide text-gray-400 '>
-                  {projectDescription}
-                </p>
-                <h3 className='py-3 text-lg'>Stack:</h3>
-                <div className=' py-1 text-sm'>
-                  {skills.map((skill, index) => (
-                    <span
-                      className='inline-block tracking-wider md:inline skill mr-3 p-3 rounded-full text-primary mb-3'
-                      key={index}>
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-                <div className=' pt-10 md:pt-20 project__links flex items-center justify-between'>
-                  <a
-                    className='px-4 py-2 xs:text-base text-xs hover:text-gray-200'
-                    href={links[0]}
-                    target='_blank'
-                    rel='noopener noreferrer'>
-                    Live Demo
-                  </a>
-                  {title !== 'Virtual peer' && (
-                    <a
-                      className='px-4 py-2 xs:text-base text-xs hover:text-gray-200'
-                      href={links[1]}
-                      target='_blank'
-                      rel='noopener noreferrer'>
-                      Code on Github
-                    </a>
-                  )}
+                <div className='flex flex-col h-full'>
+                  <div className='m-auto md:py-20 p-6'>
+                    <p className='text-md mb-8 font-raleway tracking-wide text-gray-400 '>
+                      {projectDescription}
+                    </p>
+                    <h3 className='py-3 text-lg'>Stack:</h3>
+                    <div className=' py-1 text-sm mb-10'>
+                      {skills.map((skill, index) => (
+                        <span
+                          className='inline-block tracking-wider md:inline skill mr-3 p-3 rounded-full text-primary mb-3'
+                          key={index}>
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                    <div className='  project__links space-x-2  flex items-center justify-between'>
+                      <a
+                        className=' px-5 rounded-full py-2 text-gray-800 xs:text-base text-xs hover:text-gray-200'
+                        href={links[0]}
+                        target='_blank'
+                        rel='noopener noreferrer'>
+                        Live Demo
+                      </a>
+                      {title !== 'Virtual peer' && (
+                        <a
+                          className='px-5 rounded-full text-gray-800 py-2 xs:text-base text-xs hover:text-gray-200'
+                          href={links[1]}
+                          target='_blank'
+                          rel='noopener noreferrer'>
+                          Code on Github
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </div>
