@@ -6,6 +6,8 @@ export const GET_ALL_PROJECTS = gql`
       id
       images {
         url
+        height
+        width
       }
       links
       skills
@@ -29,6 +31,8 @@ export const GET_PROJECT = gql`
       links
       images {
         url
+        height
+        width
       }
       links
       skills
