@@ -31,11 +31,9 @@ const Project = ({ project }) => {
                 animate={{ x: 0 }}
                 transition={{ duration: 1 }}
                 className='col-span-1 md:-mt-24 project__links  '>
-                {/* <img src={images[0].url} alt={title} alt={title} /> */}
                 <Image
                   className='object-cover'
                   src={images[0].url}
-                  alt={title}
                   alt={title}
                   width={550}
                   height={350}

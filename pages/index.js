@@ -11,6 +11,7 @@ import { motion } from 'framer-motion';
 import Background from '../components/Background';
 import graphcms from '../graphql/client';
 import { GET_ALL_PROJECTS } from '../graphql/queries';
+import { GradientStyle } from '../components/Nav';
 
 const Home = ({ projects }) => {
   const [showDownArrow, setArrow] = useState(false);
@@ -21,7 +22,7 @@ const Home = ({ projects }) => {
     setTimeout(() => {
       setShow(true);
       setTypewriter(false);
-    }, 7000);
+    }, 6000);
   }, []);
 
   return (
@@ -30,26 +31,28 @@ const Home = ({ projects }) => {
       description='Hello, welcome to my portfolio. My name is Samuel Antwi. I am a  front-end developer.'>
       <Background />
       <div className='home  text-gray-50  font-raleway absolute top-0 right-0 left-0 bottom-0'>
-        <div className='container mx-auto '>
+        <div className=' '>
           <div className='flex justify-center items-center justify-items-center inset-0 min-h-screen'>
-            <div className='md:text-4xl xs:text-2xl  text-lg text-center'>
+            <div className=' text-center'>
               {typewriter && (
-                <div className='text-gray-400 md:text-4xl sm:relative absolute top-[25%] mb-10 font-futura'>
+                <GradientStyle className=' md:text-3xl text-xl px-4 sm:relative absolute top-[25%] mb-10 font-futura'>
                   <Typewriter
                     options={{
-                      strings: [' Thank you for visiting my portfolio..'],
+                      strings: [' Welcome to my portfolio..'],
                       autoStart: true,
                       loop: false,
                     }}
                   />
-                </div>
+                </GradientStyle>
               )}
               {show && (
                 <motion.div initial={{ y: -500 }} animate={{ y: 0 }} transition={{ duration: 0.8 }}>
-                  <h3 className='mb-1 md:text-4xl'>
-                    Hello, I'm <span className='text-primary capitalize'>samuel antwi.</span>
+                  <h3 className='mb-1 md:text-2xl text-xl  text-gray-200'>
+                    Hello, my name is <span className='text-primary capitalize'>samuel antwi.</span>
                   </h3>
-                  <h3 className='mb-5 md:text-4xl'>I'm a Front-end developer.</h3>
+                  <h3 className='mb-5  md:text-2xl text-xl text-gray-200'>
+                    I'm a Front End Developer.
+                  </h3>
                   <Styles>
                     <Link
                       to='about'
@@ -69,10 +72,10 @@ const Home = ({ projects }) => {
               )}
               {!show && (
                 <motion.div initial={{ y: 500 }} animate={{ y: 0 }} transition={{ duration: 0.8 }}>
-                  <h3 className='mb-1 md:text-4xl'>
-                    Hello, I'm <span className='text-primary capitalize'>samuel antwi.</span>
+                  <h3 className='mb-1  md:text-2xl text-xl '>
+                    Hello, my name is <span className='text-primary capitalize'>samuel antwi.</span>
                   </h3>
-                  <h3 className='mb-5 md:text-4xl'>I'm a Front-end developer.</h3>
+                  <h3 className='mb-5  md:text-2xl text-xl '>I'm a Front End Developer.</h3>
                   <Styles>
                     <Link
                       to='about'

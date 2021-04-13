@@ -22,9 +22,9 @@ const Nav = () => {
         <div className='flex items-center max-w-4xl justify-between'>
           <Link href='/'>
             <a>
-              <Logo className=' gradient__text hidden md:block  uppercase tracking-widest font-semibold'>
+              <GradientStyle className=' gradient__text hidden md:block  uppercase tracking-widest font-semibold'>
                 samuel antwi
-              </Logo>
+              </GradientStyle>
             </a>
           </Link>
           <div className='hidden md:block'>
@@ -39,9 +39,9 @@ const Nav = () => {
         <div className='flex items-center justify-between'>
           <Link href='/'>
             <a>
-              <Logo className=' gradient__text md:hidden uppercase tracking-widest font-semibold'>
+              <GradientStyle className=' gradient__text md:hidden uppercase tracking-widest font-semibold'>
                 samuel antwi
-              </Logo>
+              </GradientStyle>
             </a>
           </Link>
           <div className='md:hidden'>
@@ -60,14 +60,14 @@ export default Nav;
 export const Links = ({ link, children }) => {
   return (
     <ScrollLink
-      className='uppercase cursor-pointer  transition duration-300 hover:text-primary tracking-widest px-4 py-2 text-sm '
+      className='uppercase cursor-pointer transition duration-300 hover:text-primary tracking-widest px-4 py-2 text-sm '
       to={link}>
       {children}
     </ScrollLink>
   );
 };
 
-const Logo = styled.div`
+export const GradientStyle = styled.div`
 background-color: #CA4246;
   
   /* Create the gradient. */
