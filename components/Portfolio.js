@@ -17,15 +17,15 @@ const Portfolio = ({ projects }) => {
             const { id, images, slug, skills, title } = project;
             return (
               <div key={id} className='wrapper project col-span-1 relative'>
-                <img src={images[0].url} alt={title} />
+                {/* <img src={images[0].url} alt={title} /> */}
 
-                {/* <Image
-                    className='object-cover'
-                    src={images[0].url}
-                    alt={title}
-                    width={images[0].width}
-                    height={images[0].height}
-                  /> */}
+                <Image
+                  className='object-cover'
+                  src={images[0].url}
+                  alt={title}
+                  width={images[0].width}
+                  height={images[0].height}
+                />
 
                 <div className='overlay bg-secondary opacity-80 overlay shadow-lg flex flex-col justify-items-center items-center justify-center '>
                   <div className='space-y-10'>
