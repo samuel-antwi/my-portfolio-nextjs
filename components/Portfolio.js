@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const Portfolio = ({ projects }) => {
   return (
@@ -17,16 +16,7 @@ const Portfolio = ({ projects }) => {
             const { id, images, slug, skills, title } = project;
             return (
               <div key={id} className='wrapper project col-span-1 relative'>
-                {/* <img src={images[0].url} alt={title} /> */}
-
-                <Image
-                  className='object-cover'
-                  src={images[0].url}
-                  alt={title}
-                  width={images[0].width}
-                  height={images[0].height}
-                />
-
+                <img src={images[0].url} alt={title} />
                 <div className='overlay bg-secondary opacity-80 overlay shadow-lg flex flex-col justify-items-center items-center justify-center '>
                   <div className='space-y-10'>
                     <div className='mb-10'>
@@ -43,7 +33,9 @@ const Portfolio = ({ projects }) => {
                     </div>
                     <Link href={`/project/${slug}`}>
                       <a>
-                        <button className=' transition text-gray-800 duration-500 ease-in-out flex items-center  max-w-md mx-auto border-2 py-2 px-10 border-primary_1 hover:bg-primary_1 hover:text-white focus:outline-none'>
+                        <button
+                          aria-label='View more'
+                          className=' transition text-gray-800 duration-500 ease-in-out flex items-center  max-w-md mx-auto border-2 py-2 px-10 border-primary_1 hover:bg-primary_1 hover:text-white focus:outline-none'>
                           View more
                         </button>
                       </a>

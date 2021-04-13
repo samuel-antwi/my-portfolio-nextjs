@@ -26,7 +26,7 @@ const Contact = () => {
           </h1>
           <div className='h-1 bg-gray-50 w-16 flex max-w-xs mx-auto'></div>
         </div>
-        <p className='py-10 text-secondary text-center'>
+        <p className='py-10 text-lg tracking-wider text-gray-300 text-center'>
           Have a question or want to work together?
         </p>
         <div>
@@ -63,13 +63,17 @@ const Contact = () => {
                 </span>
               </div>
             </div>
-            <div data-aos='slide-right' data-aos-duration='2000' className='flex justify-between '>
-              <p className='text-gray-400 text-sm'>{characters} / 500</p>
+            <div className='flex justify-between '>
+              <p data-aos='slide-right' data-aos-duration='2000' className='text-gray-400 text-sm'>
+                {characters} / 500
+              </p>
               <button
+                data-aos='slide-left'
+                data-aos-duration='2000'
                 type='submit'
                 aria-label='Submit'
                 disabled={state.submitting}
-                className='border-2 text-sm tracking-wider hover:bg-secondary hover:border-secondary uppercase xs:py-2 py-1 px-3  xs:px-6 transition duration-500 ease-in-out'>
+                className='border-2 border-secondary text-sm tracking-wider hover:text-gray-900 font-medium hover:bg-secondary hover:border-secondary uppercase xs:py-2 py-1 px-3  xs:px-6 transition duration-500 ease-in-out'>
                 {state.submitting ? ' Submiting' : 'Submit'}
               </button>
             </div>
