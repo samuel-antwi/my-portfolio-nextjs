@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Portfolio = ({ projects }) => {
   return (
@@ -11,12 +12,21 @@ const Portfolio = ({ projects }) => {
           </h1>
           <div className='h-1 bg-gray-200 w-16 flex max-w-xs mx-auto md:mb-20 mb-10'></div>
         </div>
-        <div className='md:grid lg:grid-cols-3 md:grid-cols-2 max-w-6xl mx-auto gap-5 md:px-8'>
+        <div className='md:grid lg:grid-cols-3 md:grid-cols-2 max-w-7xl mx-auto  md:px-8'>
           {projects.map((project) => {
-            const { id, images, name, slug, skills, title } = project;
+            const { id, images, slug, skills, title } = project;
             return (
               <div key={id} className='wrapper project col-span-1 relative'>
-                <img src={images[0].url} alt={name} alt='Project name' />
+                <img src={images[0].url} alt={title} />
+
+                {/* <Image
+                    className='object-cover'
+                    src={images[0].url}
+                    alt={title}
+                    width={images[0].width}
+                    height={images[0].height}
+                  /> */}
+
                 <div className='overlay bg-secondary opacity-80 overlay shadow-lg flex flex-col justify-items-center items-center justify-center '>
                   <div className='space-y-10'>
                     <div className='mb-10'>

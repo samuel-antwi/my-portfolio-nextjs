@@ -4,6 +4,7 @@ import { GET_ALL_PROJECTS, GET_PROJECT } from '../../graphql/queries';
 import { MdClose } from 'react-icons/md';
 import { motion } from 'framer-motion';
 import { useRouter, Router } from 'next/router';
+import Image from 'next/image';
 
 const Project = ({ project }) => {
   const { images, title, projectDescription, links, skills } = project;
@@ -21,10 +22,7 @@ const Project = ({ project }) => {
         </button>
         <div className='flex min-h-screen'>
           <div className='max-w-6xl m-auto'>
-            <h1
-              className='title md:mb-28 mb-10 md:pt-5 pt-20 text-2xl uppercase md:text-4xl font text-gray-300 text-center'
-              // className='animate-bounce md:mb-28 md:pt-5 pt-20 text-2xl uppercase md:text-4xl font text-gray-300 text-center'
-            >
+            <h1 className=' md:mb-28 mb-10 md:pt-5 pt-20 text-2xl uppercase md:text-4xl font text-gray-300 text-center animate-bounce'>
               {title}
             </h1>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 bg-primary'>
@@ -33,7 +31,17 @@ const Project = ({ project }) => {
                 animate={{ x: 0 }}
                 transition={{ duration: 1 }}
                 className='col-span-1 md:-mt-24 project__links  '>
-                <img src={images[0].url} alt={title} alt={title} />
+                {/* <img src={images[0].url} alt={title} alt={title} /> */}
+                <Image
+                  className='object-cover'
+                  src={images[0].url}
+                  alt={title}
+                  alt={title}
+                  width={550}
+                  height={350}
+                  loading='eager'
+                  priority={true}
+                />
               </motion.div>
               <motion.div
                 initial={{ x: '100vw' }}
@@ -180,7 +188,7 @@ const Styles = styled.div`
     background-position: left bottom;
   }
 
-  .title {
+  /* .title {
     animation: bounce infinite 1s linear;
-  }
+  } */
 `;
