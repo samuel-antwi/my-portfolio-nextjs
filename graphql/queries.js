@@ -1,4 +1,4 @@
-import { gql } from 'graphql-request';
+import { gql } from 'graphql-request'
 
 export const GET_ALL_PROJECTS = gql`
   query getProjects {
@@ -13,20 +13,16 @@ export const GET_ALL_PROJECTS = gql`
       skills
       slug
       title
-      description {
-        text
-      }
+      projectDescription
     }
   }
-`;
+`
 
 export const GET_PROJECT = gql`
   query getProject($slug: String!) {
     project(where: { slug: $slug }) {
-      description {
-        text
-      }
       projectDescription
+
       id
       links
       images {
@@ -40,4 +36,4 @@ export const GET_PROJECT = gql`
       title
     }
   }
-`;
+`
