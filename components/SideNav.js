@@ -1,5 +1,6 @@
-import { GrClose } from 'react-icons/gr';
-import { Link } from 'react-scroll';
+import { GrClose } from 'react-icons/gr'
+import { FaTimes } from 'react-icons/fa'
+import { Link } from 'react-scroll'
 
 const SideNav = ({ isOpen, setOpen }) => {
   return (
@@ -8,13 +9,13 @@ const SideNav = ({ isOpen, setOpen }) => {
         isOpen ? '-translate-x-0' : '-translate-x-full'
       }  bg-gray-900 w-full p-8 text-blue-50  absolute inset-y-0 z-[20] md:relative md:hidden transition duration-500 left-0 transform  ease-in-out`}>
       <div>
-        <div className='flex justify-between items-center'>
-          <h1 className='mb-10 text-3xl font-semibold tracking-wide'>Progym</h1>
-          <button>
-            <GrClose size={25} />
+        <div className='flex justify-end'>
+          <button className='focus:outline-none' onClick={() => setOpen(false)}>
+            <FaTimes className='text-gray-500' size={30} />
           </button>
         </div>
-        <div className='space-y-6 flex flex-col'>
+
+        <div className='flex flex-col space-y-6'>
           <Links className='cursor-pointer' setOpen={setOpen} link='home'>
             Home
           </Links>
@@ -30,18 +31,18 @@ const SideNav = ({ isOpen, setOpen }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SideNav;
+export default SideNav
 
 const Links = ({ link, children, setOpen }) => {
   return (
     <Link
-      className='cursor-pointer uppercase hover:text-primary tracking-widest transition duration-300'
+      className='tracking-widest uppercase transition duration-300 cursor-pointer hover:text-primary'
       onClick={() => setOpen(false)}
       to={link}>
       {children}
     </Link>
-  );
-};
+  )
+}
