@@ -1,4 +1,3 @@
-import { FaTimes } from 'react-icons/fa'
 import { VscChromeClose } from 'react-icons/vsc'
 import { Link } from 'react-scroll'
 
@@ -14,7 +13,6 @@ const SideNav = ({ isOpen, setOpen }) => {
             <VscChromeClose className='text-gray-500' size={30} />
           </button>
         </div>
-
         <div className='flex flex-col space-y-6'>
           <Links className='cursor-pointer' setOpen={setOpen} link='home'>
             Home
@@ -39,7 +37,7 @@ export default SideNav
 const Links = ({ link, children, setOpen }) => {
   return (
     <Link
-      className='tracking-widest uppercase transition duration-300 cursor-pointer hover:text-primary'
+      className='tracking-widest uppercase transition duration-300 cursor-pointer  hover:underline hover:text-primary'
       onClick={() => setOpen(false)}
       to={link}>
       {children}
