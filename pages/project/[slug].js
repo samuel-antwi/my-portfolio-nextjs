@@ -12,7 +12,7 @@ const Project = ({ project }) => {
   const router = useRouter()
 
   return (
-    <Styles className='z-20'>
+    <Styles className='z-20 overflow-hidden'>
       <div className='text-gray-100 font-raleway'>
         <button
           aria-label='close'
