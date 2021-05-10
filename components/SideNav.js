@@ -1,5 +1,5 @@
-import { GrClose } from 'react-icons/gr'
 import { FaTimes } from 'react-icons/fa'
+import { VscChromeClose } from 'react-icons/vsc'
 import { Link } from 'react-scroll'
 
 const SideNav = ({ isOpen, setOpen }) => {
@@ -11,7 +11,7 @@ const SideNav = ({ isOpen, setOpen }) => {
       <div>
         <div className='flex justify-end'>
           <button className='focus:outline-none' onClick={() => setOpen(false)}>
-            <FaTimes className='text-gray-500' size={30} />
+            <VscChromeClose className='text-gray-500' size={30} />
           </button>
         </div>
 
