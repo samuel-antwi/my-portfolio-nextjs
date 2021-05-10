@@ -1,36 +1,36 @@
-import styled from 'styled-components';
-import graphcms from '../../graphql/client';
-import { GET_ALL_PROJECTS, GET_PROJECT } from '../../graphql/queries';
-import { MdClose } from 'react-icons/md';
-import { motion } from 'framer-motion';
-import { useRouter, Router } from 'next/router';
-import Image from 'next/image';
+import styled from 'styled-components'
+import graphcms from '../../graphql/client'
+import { GET_ALL_PROJECTS, GET_PROJECT } from '../../graphql/queries'
+import { MdClose } from 'react-icons/md'
+import { motion } from 'framer-motion'
+import { useRouter, Router } from 'next/router'
+import Image from 'next/image'
 
 const Project = ({ project }) => {
-  const { images, title, projectDescription, links, skills } = project;
+  const { images, title, projectDescription, links, skills } = project
 
-  const router = useRouter();
+  const router = useRouter()
 
   return (
-    <Styles>
-      <div className='font-raleway text-gray-100 overflow-x-hidden'>
+    <Styles className='z-20'>
+      <div className='text-gray-100 font-raleway'>
         <button
           aria-label='close'
           onClick={() => router.back('/')}
-          className='absolute top-5 right-5 z-20  text-gray-400 md:text-5xl text-3xl'>
+          className='absolute z-20 text-3xl text-gray-400 top-5 right-5 md:text-5xl'>
           <MdClose />
         </button>
         <div className='flex min-h-screen'>
           <div className='max-w-6xl m-auto'>
-            <h1 className=' md:mb-28 mb-10 md:pt-5 pt-20 text-2xl uppercase md:text-4xl font text-gray-300 text-center animate-bounce'>
+            <h1 className='pt-20 mb-10 text-2xl text-center text-gray-300 uppercase md:mb-28 md:pt-5 md:text-4xl font animate-bounce'>
               {title}
             </h1>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 bg-primary'>
+            <div className='grid grid-cols-1 gap-10 lg:grid-cols-2 bg-primary'>
               <motion.div
                 initial={{ x: '-100vw' }}
                 animate={{ x: 0 }}
                 transition={{ duration: 1 }}
-                className='col-span-1 md:-mt-24 project__links  '>
+                className='col-span-1 md:-mt-24 project__links '>
                 <Image
                   className='object-cover'
                   src={images[0].url}
@@ -47,23 +47,23 @@ const Project = ({ project }) => {
                 transition={{ duration: 1 }}
                 className='col-span-1 '>
                 <div className='flex flex-col h-full'>
-                  <div className='m-auto md:py-20 p-6'>
-                    <p className='text-md mb-8 font-raleway tracking-wide text-gray-400 '>
+                  <div className='p-6 m-auto md:py-20'>
+                    <p className='mb-8 tracking-wide text-gray-400 text-md font-raleway '>
                       {projectDescription}
                     </p>
                     <h3 className='py-3 text-lg'>Stack:</h3>
-                    <div className=' py-1 text-sm mb-10'>
+                    <div className='py-1 mb-10 text-sm '>
                       {skills.map((skill, index) => (
                         <span
-                          className='inline-block tracking-wider md:inline skill mr-3 p-3 rounded-full text-primary mb-3'
+                          className='inline-block p-3 mb-3 mr-3 tracking-wider rounded-full md:inline skill text-primary'
                           key={index}>
                           {skill}
                         </span>
                       ))}
                     </div>
-                    <div className='  project__links space-x-2  flex items-center justify-between'>
+                    <div className='flex items-center justify-between space-x-2 project__links'>
                       <a
-                        className=' px-5 rounded-full py-2 text-gray-800 xs:text-base text-xs hover:text-gray-200'
+                        className='px-5 py-2 text-xs text-gray-800 rounded-full xs:text-base hover:text-gray-200'
                         href={links[0]}
                         target='_blank'
                         rel='noopener noreferrer'>
@@ -71,7 +71,7 @@ const Project = ({ project }) => {
                       </a>
                       {title !== 'Virtual peer' && (
                         <a
-                          className='px-5 rounded-full text-gray-800 py-2 xs:text-base text-xs hover:text-gray-200'
+                          className='px-5 py-2 text-xs text-gray-800 rounded-full xs:text-base hover:text-gray-200'
                           href={links[1]}
                           target='_blank'
                           rel='noopener noreferrer'>
@@ -87,13 +87,13 @@ const Project = ({ project }) => {
         </div>
       </div>
     </Styles>
-  );
-};
+  )
+}
 
-export default Project;
+export default Project
 
 export const getStaticPaths = async () => {
-  const { projects } = await graphcms.request(GET_ALL_PROJECTS);
+  const { projects } = await graphcms.request(GET_ALL_PROJECTS)
   return {
     paths: projects.map(({ slug }) => ({
       params: {
@@ -101,17 +101,17 @@ export const getStaticPaths = async () => {
       },
     })),
     fallback: false,
-  };
-};
+  }
+}
 
 export const getStaticProps = async ({ params }) => {
-  const { project } = await graphcms.request(GET_PROJECT, { slug: params.slug });
+  const { project } = await graphcms.request(GET_PROJECT, { slug: params.slug })
   return {
     props: {
       project,
     },
-  };
-};
+  }
+}
 
 const Styles = styled.div`
   /* Modal style */
@@ -189,4 +189,4 @@ const Styles = styled.div`
   /* .title {
     animation: bounce infinite 1s linear;
   } */
-`;
+`

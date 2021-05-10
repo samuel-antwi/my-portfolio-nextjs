@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react';
-import { Link as ScrollLink } from 'react-scroll';
-import { Sling as Hamburger } from 'hamburger-react';
-import SideNav from './SideNav';
-import styled from 'styled-components';
-import Link from 'next/link';
+import { useEffect, useState } from 'react'
+import { Link as ScrollLink } from 'react-scroll'
+import { Sling as Hamburger } from 'hamburger-react'
+import SideNav from './SideNav'
+import styled from 'styled-components'
+import Link from 'next/link'
 
 const Nav = () => {
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState(false)
 
   useEffect(() => {
-    isOpen ? window.scrollTo(0, 0) : null;
-  }, [isOpen]);
+    isOpen ? window.scrollTo(0, 0) : null
+  }, [isOpen])
 
   return (
     <>
@@ -18,17 +18,17 @@ const Nav = () => {
       <div
         className={` ${
           isOpen ? 'border-primary_1' : ' border-secondary'
-        } fixed w-full top-0 bg-nav text-gray-200 py-4 md:px-10 px-4  border-b-4 z-40`}>
-        <div className='flex items-center max-w-4xl justify-between'>
+        } fixed w-full top-0 bg-nav text-gray-200 py-4 md:px-10 px-4  border-b-4 z-10`}>
+        <div className='flex items-center justify-between max-w-4xl'>
           <Link href='/'>
             <a>
-              <GradientStyle className=' gradient__text hidden md:block  uppercase tracking-widest font-semibold'>
+              <GradientStyle className='hidden font-semibold tracking-widest uppercase  gradient__text md:block'>
                 samuel antwi
               </GradientStyle>
             </a>
           </Link>
           <div className='hidden md:block'>
-            <div className='flex items-center space-x-6  max-w-5xl mx-auto'>
+            <div className='flex items-center max-w-5xl mx-auto space-x-6'>
               <Links link='home'>home</Links>
               <Links link='about'>about</Links>
               <Links link='portfolio'>portfolio</Links>
@@ -39,7 +39,7 @@ const Nav = () => {
         <div className='flex items-center justify-between'>
           <Link href='/'>
             <a>
-              <GradientStyle className=' gradient__text md:hidden uppercase tracking-widest font-semibold'>
+              <GradientStyle className='font-semibold tracking-widest uppercase  gradient__text md:hidden'>
                 samuel antwi
               </GradientStyle>
             </a>
@@ -52,20 +52,20 @@ const Nav = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Nav;
+export default Nav
 
 export const Links = ({ link, children }) => {
   return (
     <ScrollLink
-      className='uppercase cursor-pointer transition duration-300 hover:text-primary tracking-widest px-4 py-2 text-sm '
+      className='px-4 py-2 text-sm tracking-widest uppercase transition duration-300 cursor-pointer hover:text-primary '
       to={link}>
       {children}
     </ScrollLink>
-  );
-};
+  )
+}
 
 export const GradientStyle = styled.div`
 background-color: #CA4246;
@@ -130,4 +130,4 @@ background-color: #CA4246;
     100% {
         background-size: 650%;
     } 
-`;
+`
