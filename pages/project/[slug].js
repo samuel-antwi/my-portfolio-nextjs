@@ -115,7 +115,8 @@ export const getStaticProps = async ({ params }) => {
 
 const Styles = styled.div`
   /* Modal style */
-  background: rgba(0, 0, 0, 0.9);
+  background: #1b262f;
+  /* background: rgba(0, 0, 0, 0.9); */
   position: fixed;
   height: 100%;
   width: 100%;
